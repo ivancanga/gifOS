@@ -13,13 +13,12 @@ function active_sailor_night() {
 }
 
 function active_sailor_day() {
-    document.getElementById("theme").href = "";
+    document.getElementById("theme").href = "/gifOS/styles/sailor_day.css";
     document.getElementById("img-header").src = "/gifOS/images/gifOF_logo.png";
     document.getElementById("lupa").src = "/gifOS/images/lupa_inactive.svg";
 }
 
 function getSearchResults() {
-
     search = document.getElementById("search").value;
     const found =
         fetch('http://api.giphy.com/v1/gifs/search?q=' + search +
@@ -27,9 +26,11 @@ function getSearchResults() {
             .then((response) => {
                 return response.json()
             }).then(data => {
-                console.log(data.data);
-                document.getElementById("inner").innerHTML = ("<img src='" + data.data[0].images.original.url + "' style='height:350px; width:350px'/>");
-                return data
+                $("#inner_gifs").html("");
+                for (var i = 0; i < 20; i++) {
+                    console.log(i);
+                    $("#inner_gifs").append("<img src=' " + data.data[i].images.original.url + " ' style='height:300px; width:300px; padding: 0 4px;'/>");
+                }
             })
             .catch((error) => {
                 return error
