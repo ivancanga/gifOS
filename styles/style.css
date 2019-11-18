@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FFF5FE;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.top-bar{
+    color: white;
+    background-image: linear-gradient(to right, #4180F6, #F7C9F3);
+    box-shadow: 0 1px 0 0 #110038;
+    font-size: 0.8rem;
+}
+
+.top-bar p{
+    padding: 3px 7px;
+}
+
+.content{
+    margin: 0 auto;
+    width: 1200px;
+}
+
+header{
+    margin: 40px 0;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+}
+
+button,input{
+    outline: none;
+}
+
+.btns-header{
+    margin: 5px 0;
+}
+
+.btns-header .first{
+    margin-right: 10px;
+}
+
+.btn-header{
+    width: 144px;
+    height: 36px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1rem;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.btn-header:hover,.choose-style:hover button{
+    background: #E6BCE2;
+}
+
+.btn-header span{
+    display: block;
+    line-height: 1.5rem;
+}
+
+.btn-header span:hover{
+    display: block;
+    border: 1px dotted black;
+}
+
+.btn-header+.dropdown{
+    width: 36px;
+    height: 36px;
+    margin-left: -5px;
+}
+
+.choose-style{
+    display: inline-block;
+}
+
+.choose-style:hover button span{
+    display: block;
+    border: 1px dotted black;
+}
+
+.choose-style ul li{
+    list-style: none;
+    position: relative;
+}
+
+#style-list{
+    position: absolute;
+    display: none;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    width: 100%;
+}
+
+#style-list p{
+    padding: 10px;
+    margin: 10px;
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+#style-list p:hover{
+    border: 1px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
+}
+
+#style-list p.sailor-day:hover{
+    background: #FFF4FD;
+}
+
+#style-list p.sailor-night:hover{
+    color: white;
+    background: #2E32FB;
+}
+
+.url-header{
+    margin-left: 10px; 
+}
+
+.url-header a{
+    padding: 5px;
+    text-decoration: none;
+    color: #110038;
+}
+
+.url-header a:hover{
+    border: 1px dotted black;
+}
+
+.dashed{
+    border-bottom: 1px solid black;
+}
+
+.search-content{
+    color: white;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    margin-top: 16px;
+}
+
+.title-search-bar{
+    font-weight: bold;
+    font-size: 14px;
+    padding: 3px 8px;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    box-shadow: inset -2px 0 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.search-bar{
+    padding: 15px 12px;
+}
+
+.search-input{
+    width: 90%;
+    line-height: 3rem;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1rem;
+    padding: 0 10px;
+}
+
+.search-input::content{
+    font-size: 2rem;
+}
+
+.search-input::placeholder{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1rem;
+    color: #B4B4B4;
+    letter-spacing: 0;
+    line-height: 22px;
+}
+
+.btn-search{
+    vertical-align: middle;
+    width: 105px;
+    height: 2.5rem;
+    background: #E6E6E6;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1rem;
+    color: #B4B4B4;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin-left: 5px;
+}
+
+#lupa{
+    margin-left: -5px;
+    padding: 0 5px;
+}
+
+.title-section{
+    margin: 20px 0;
+    padding: 7px;
+    background: #FFFAFE;
+    border: 1px solid #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+}

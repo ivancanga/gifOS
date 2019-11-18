@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>gifOS</title>
+    <link type="text/css" rel="stylesheet" href="/gifOS/styles/style.css">
+    <link rel="stylesheet" href="" id="theme">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top-bar">
+        <p>Bienvenides a Guifos.com -----Donde los gifs están.////// Número de visitas: 12.545.344</p>
+    </div>
+    <div class="content">
+        <header>
+            <div class="nav-bar">
+                <img id="img-header" src="/gifOS/images/gifOF_logo.png" alt="">
+                <div class="btns-header">
+                    <button class="btn-header first"><span>Crear Guifos</span></button>
+                    <div class="choose-style">
+                        <ul>
+                        <li id="elegir-tema" onmouseover="ver()" onmouseout="ocultar()">
+                        <button class="btn-header"><span>Elegir tema</span></button>
+                        <button class="btn-header dropdown"><span><img src="/gifOS/images/dropdown.svg"></span></button>
+                        <div id="style-list">
+                            <p onclick="active_sailor_day()" class="sailor-day"><span class="dashed">S</span>ailor Day</p>
+                            <p onclick="active_sailor_night()" class="sailor-night"><span class="dashed">S</span>ailor Night</p>
+                        </div>
+                        </li>
+                        </ul>
+                    </div>
+                    <span class="url-header"><a href="index.html"><span class="dashed">M</span>is Guifos</span></a>
+                </div>
+            </div>
+
+            <div class="search-content">
+                <div class="title-search-bar">Buscar</div>
+                <div class="search-bar">
+                    <input class="search-input" type="search" id="search"
+                        placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                    <button class="btn-search" onclick="getSearchResults()"><img id="lupa" src="/gifOS/images/lupa_inactive.svg" alt="">  Buscar</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="suggested">
+            <div class="title-section">Hoy te sugerimos:</div>
+
+            <div id="inner"></div>
+
+        </div>
+
+        <div class="trendings">
+            <div class="title-section">Tendencias:</div>
+        </div>
+
+    </div>
+    <script src="/gifOS/script.js"></script>
+</body>
+
+</html>
