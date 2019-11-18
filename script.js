@@ -27,9 +27,9 @@ function getSearchResults() {
                 return response.json()
             }).then(data => {
                 $("#inner_gifs").html("");
+                console.log(data.data);
                 for (var i = 0; i < 20; i++) {
-                    console.log(i);
-                    $("#inner_gifs").append("<img src=' " + data.data[i].images.original.url + " ' style='height:300px; width:300px; padding: 0 4px;'/>");
+                    $("#inner_gifs").append("<img src=' " + data.data[i].images.original.webp + " ' style='height:300px; width:300px; padding: 0 4px;'/>");
                 }
             })
             .catch((error) => {
