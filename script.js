@@ -19,6 +19,7 @@ function active_sailor_day() {
 }
 
 function getSearchResults() {
+
     search = document.getElementById("search").value;
     const found =
         fetch('http://api.giphy.com/v1/gifs/search?q=' + search +
@@ -27,12 +28,12 @@ function getSearchResults() {
                 return response.json()
             }).then(data => {
                 console.log(data.data);
-                console.log(data.data[0].embed_url);
-                document.getElementById("inner").innerHTML = ("<img src='"+data.data[0].embed_url+"' style='height:350px; width:350px'/>");
-                return data 
+                document.getElementById("inner").innerHTML = ("<img src='" + data.data[0].images.original.url + "' style='height:350px; width:350px'/>");
+                return data
             })
             .catch((error) => {
                 return error
             })
     return found
+
 }
