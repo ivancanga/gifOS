@@ -36,5 +36,15 @@ function getSearchResults() {
                 return error
             })
     return found
-
 }
+
+$(function() {
+    $(".search-bar input").keypress(function (e) {
+        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+            $('.btn-search').click();
+            return false;
+        } else {
+            return true;
+        }
+    });
+});
