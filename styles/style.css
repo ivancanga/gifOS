@@ -58,7 +58,7 @@ button,input{
     cursor: pointer;
 }
 
-.btn-header:hover,.choose-style:hover button{
+.btn-header:hover,.choose-style:hover button, .search-input:focus ~ .btn-search:hover{
     background: #E6BCE2;
 }
 
@@ -67,7 +67,15 @@ button,input{
     line-height: 1.5rem;
 }
 
-.btn-header span:hover{
+.btn-header span:hover {
+    display: block;
+    border: 1px dotted black;
+}
+
+/* Boton de buscar:hover cuando se escribe algo en la barra de busqueda */
+.search-input:focus ~ .btn-search:hover span{
+    margin: 3px;
+    padding: 5px;
     display: block;
     border: 1px dotted black;
 }
@@ -177,6 +185,29 @@ button,input{
 
 .search-input::content{
     font-size: 2rem;
+}
+
+/* Boton buscar cuando se escribe algo en la barra de busqueda */
+.search-input:focus ~ .btn-search, .btn-search:focus{
+    color: black;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.search-input:focus ~ .btn-search .lupa
+{
+    content: url(/gifOS/images/lupa.svg);
+}
+
+.lupa{
+    display: inline-block;
+    content: url(/gifOS/images/lupa_inactive.svg);
+    margin-right: 5px;
+};
+
+.search-input:focus ~ .lupa{
+    content: "hola";
 }
 
 .search-input::placeholder{
