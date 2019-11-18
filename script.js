@@ -21,7 +21,7 @@ function active_sailor_day() {
 function getSearchResults() {
     search = document.getElementById("search").value;
     const found =
-        fetch('http://api.giphy.com/v1/gifs/search?q=' + search +
+        fetch('//api.giphy.com/v1/gifs/search?q=' + search +
             '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx')
             .then((response) => {
                 return response.json()
