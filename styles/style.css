@@ -145,7 +145,7 @@ button,input{
     color: white;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    margin-top: 16px;
+    margin-top: 35px;
 }
 
 .title-search-bar{
@@ -154,6 +154,10 @@ button,input{
     padding: 3px 8px;
     background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     box-shadow: inset -2px 0 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.title-search-bar p{
+    margin-top: 3px;
 }
 
 .search-bar{
