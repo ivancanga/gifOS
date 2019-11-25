@@ -5,13 +5,12 @@
 }
 
 body{
-    background-color: #FFF5FE;
     font-family: 'Chakra Petch', sans-serif;
 }
 
 .top-bar{
+    display: flex;
     color: white;
-    background-image: linear-gradient(to right, #4180F6, #F7C9F3);
     box-shadow: 0 1px 0 0 #110038;
     font-size: 0.8rem;
 }
@@ -21,12 +20,11 @@ body{
 }
 
 .content{
+    display: flex;
+    flex-flow: column wrap;
     margin: 0 auto;
-    width: 1200px;
-}
-
-header{
-    margin: 40px 0;
+    max-width: 1200px;
+    margin: 40px 40px;
 }
 
 .nav-bar{
@@ -39,6 +37,7 @@ button,input{
 }
 
 .btns-header{
+    display: flex;
     margin: 5px 0;
 }
 
@@ -51,15 +50,8 @@ button,input{
     height: 36px;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1rem;
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     padding: 4px;
     cursor: pointer;
-}
-
-.btn-header:hover,.choose-style:hover button, .search-input:focus ~ .btn-search:hover{
-    background: #E6BCE2;
 }
 
 .btn-header span{
@@ -68,14 +60,6 @@ button,input{
 }
 
 .btn-header span:hover {
-    display: block;
-    border: 1px dotted black;
-}
-
-/* Boton de buscar:hover cuando se escribe algo en la barra de busqueda */
-.search-input:focus ~ .btn-search:hover span{
-    margin: 3px;
-    padding: 5px;
     display: block;
     border: 1px dotted black;
 }
@@ -145,11 +129,10 @@ button,input{
     border: 1px dotted black;
 }
 
-.dashed{
-    border-bottom: 1px solid black;
-}
-
 .search-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     color: white;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
@@ -160,7 +143,6 @@ button,input{
     font-weight: bold;
     font-size: 14px;
     padding: 3px 8px;
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     box-shadow: inset -2px 0 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
@@ -170,10 +152,13 @@ button,input{
 
 .search-bar{
     padding: 15px 12px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .search-input{
-    width: 90%;
+    width: 100%;
+    margin-right: 10px;
     line-height: 3rem;
     background: #FFFFFF;
     border: 1px solid #979797;
@@ -187,28 +172,16 @@ button,input{
     font-size: 2rem;
 }
 
-/* Boton buscar cuando se escribe algo en la barra de busqueda */
-.search-input:focus ~ .btn-search, .btn-search:focus{
-    color: black;
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-}
-
 .search-input:focus ~ .btn-search .lupa
 {
     content: url(/gifOS/images/lupa.svg);
 }
 
 .lupa{
-    display: inline-block;
+    display: flex;
     content: url(/gifOS/images/lupa_inactive.svg);
     margin-right: 5px;
 };
-
-.search-input:focus ~ .lupa{
-    content: "hola";
-}
 
 .search-input::placeholder{
     font-family: 'Chakra Petch', sans-serif;
@@ -219,9 +192,10 @@ button,input{
 }
 
 .btn-search{
-    vertical-align: middle;
-    width: 105px;
+    /* vertical-align: middle; */
+    width: auto;
     height: 2.5rem;
+    margin: auto;
     background: #E6E6E6;
     border: 1px solid #808080;
     box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
@@ -230,18 +204,87 @@ button,input{
     color: #B4B4B4;
     letter-spacing: 0;
     line-height: 18px;
-    margin-left: 5px;
 }
 
-#lupa{
-    margin-left: -5px;
-    padding: 0 5px;
+.btn-search-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-search-content:before{
+    content: url(/gifOS/images/lupa_inactive.svg);
 }
 
 .title-section{
     margin: 20px 0;
     padding: 7px;
     background: #FFFAFE;
-    border: 1px solid #E6BBE2;
-    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+}
+
+#inner_gifs{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+}
+
+#inner_gifs div{
+    height:300px; 
+    width: 25%; 
+    padding: 4px 4px;
+}
+
+#inner_gifs div img{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+    .top-bar{
+        display: none;
+    }
+
+    .nav-bar{
+        flex-flow: column wrap;
+    }
+
+    .nav-bar a{
+        text-align: center
+    }
+
+    .btns-header{
+        flex-flow: column wrap;
+    }
+
+    .btn-header{
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .btn-header.first{
+        margin: 20px 0 0 0;
+        padding: 0;
+    }
+
+    .dropdown{
+        display: none;
+    }
+
+    .url-header{
+        display: none;
+    }
+
+    .search-content{
+        margin-top: 0;
+    }
+
+    #inner_gifs div{
+        width: 100%;
+    }
+
+    #inner_gifs img{
+        height:350px; 
+        width:100%; 
+        padding: 4px 4px;
+    }
 }

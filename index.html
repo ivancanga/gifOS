@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>gifOS</title>
     <link type="text/css" rel="stylesheet" href="/gifOS/styles/style.css">
-    <link rel="stylesheet" href="" id="theme">
+    <link rel="stylesheet" href="/gifOS/styles/sailor_day.css" id="theme">
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
 </head>
 
@@ -16,7 +16,9 @@
     <div class="top-bar">
         <p>Bienvenides a Guifos.com -----Donde los gifs están.////// Número de visitas: 12.545.344</p>
     </div>
+
     <div class="content">
+
         <header>
             <div class="nav-bar">
                 <a href="index.html"><img id="img-header" src="/gifOS/images/gifOF_logo.png" alt=""></a>
@@ -30,7 +32,8 @@
                                             src="/gifOS/images/dropdown.svg"></span></button>
                                 <div id="style-list">
                                     <p onclick="active_sailor_day()" class="sailor-day"><span
-                                            class="dashed">S</span>ailor Day</p>
+                                            class="dashed">S</span>ailor
+                                        Day</p>
                                     <p onclick="active_sailor_night()" class="sailor-night"><span
                                             class="dashed">S</span>ailor Night</p>
                                 </div>
@@ -46,11 +49,10 @@
                     <p>Buscar</p>
                 </div>
                 <div class="search-bar">
-                        <input class="search-input" autocomplete="off" type="search" id="search"
-                            placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-                        <button type="submit" class="btn-search" onclick="getSearchResults()">
-                            <span><div class="lupa"></div>
-                            Buscar</span></button>
+                    <input class="search-input" autocomplete="off" type="search" id="search"
+                        placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                    <button type="submit" class="btn-search" onclick="getSearchResults()">
+                        <span class="btn-search-content">Buscar</span></button>
                 </div>
             </div>
         </header>
@@ -67,6 +69,7 @@
         </div>
 
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/gifOS/script.js"></script>
 </body>

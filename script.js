@@ -29,7 +29,7 @@ function getSearchResults() {
                 $("#inner_gifs").html("");
                 console.log(data.data);
                 for (var i = 0; i < 20; i++) {
-                    $("#inner_gifs").append("<img src=' " + data.data[i].images.original.url + " ' style='height:300px; width:300px; padding: 0 4px;'/>");
+                    $("#inner_gifs").append("<div><img src=' " + data.data[i].images.original.url + " ' /></div>");
                 }
             })
             .catch((error) => {
