@@ -279,12 +279,12 @@ button,input{
         margin-top: 0;
     }
 
-    .btn-search-content:before{
-        padding: 2px;
+    #lupa{
+        margin-left: 6px;
     }
 
     .btn-search-content::after{
-        content: ""
+        content: none;
     }
 
     #inner_gifs div{
