@@ -279,6 +279,11 @@ button,input{
         margin-top: 0;
     }
 
+    .search-input::placeholder{
+        font-size: 1rem;
+        line-height: auto;
+    }
+
     #lupa{
         margin-left: 6px;
     }
