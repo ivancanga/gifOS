@@ -18,6 +18,8 @@ function active_sailor_day() {
     document.getElementById("lupa").src = "/gifOS/images/lupa_inactive.svg";
 }
 
+
+
 function getSearchResults() {
     search = document.getElementById("search").value;
     const found =
@@ -38,7 +40,13 @@ function getSearchResults() {
     return found
 }
 
-$(function() {
+
+function changeLupa(){
+    document.getElementById("lupa").src = "/gifOS/images/lupa.svg"
+}
+
+
+$(function () {
     $(".search-bar input").keypress(function (e) {
         if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
             $('.btn-search').click();

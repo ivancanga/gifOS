@@ -41,10 +41,6 @@ button,input{
     margin: 5px 0;
 }
 
-.btns-header .first{
-    margin-right: 10px;
-}
-
 .btn-header{
     width: 144px;
     height: 36px;
@@ -52,6 +48,15 @@ button,input{
     font-size: 1rem;
     padding: 4px;
     cursor: pointer;
+}
+
+.create-gif{
+    margin-right: 10px;
+}
+
+.create-gif:hover button span{
+    display: block;
+    border: 1px dotted black;
 }
 
 .btn-header span{
@@ -116,13 +121,15 @@ button,input{
 }
 
 .url-header{
-    margin-left: 10px; 
+    margin: 7px 0 0 10px;
+    vertical-align: middle; 
 }
 
 .url-header a{
-    padding: 5px;
+    padding: 5px 15px 5px 0;
     text-decoration: none;
     color: #110038;
+    border: 1px solid transparent;
 }
 
 .url-header a:hover{
@@ -172,17 +179,6 @@ button,input{
     font-size: 2rem;
 }
 
-.search-input:focus ~ .btn-search .lupa
-{
-    content: url(/gifOS/images/lupa.svg);
-}
-
-.lupa{
-    display: flex;
-    content: url(/gifOS/images/lupa_inactive.svg);
-    margin-right: 5px;
-};
-
 .search-input::placeholder{
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1rem;
@@ -209,10 +205,15 @@ button,input{
 .btn-search-content{
     display: flex;
     justify-content: space-between;
+    padding: 9px;
 }
 
-.btn-search-content:before{
-    content: url(/gifOS/images/lupa_inactive.svg);
+.btn-search-content img{
+    padding-right: 8px;
+}
+
+.btn-search-content::after{
+    content: "Buscar"
 }
 
 .title-section{
@@ -261,7 +262,7 @@ button,input{
         margin: 8px 0;
     }
 
-    .btn-header.first{
+    .create-gif{
         margin: 20px 0 0 0;
         padding: 0;
     }
@@ -276,6 +277,14 @@ button,input{
 
     .search-content{
         margin-top: 0;
+    }
+
+    .btn-search-content:before{
+        padding: 2px;
+    }
+
+    .btn-search-content::after{
+        content: ""
     }
 
     #inner_gifs div{
