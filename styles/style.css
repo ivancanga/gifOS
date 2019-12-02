@@ -348,6 +348,10 @@ button,input{
         padding: 4px 4px;
     }
 
+    #gif_suggested div:nth-child(-n+3){
+        display: none;
+    }
+
     #gif_suggested div {
         margin: 10px auto;
         padding: 3px;
