@@ -18,9 +18,20 @@ function active_sailor_day() {
     document.getElementById("lupa").src = "/gifOS/images/lupa_inactive.svg";
 }
 
+function suggestedGifs(gif) {
+    fetch('//api.giphy.com/v1/gifs/search?q=' + gif +
+        '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=1')
+        .then((response) => {
+            return response.json()
+        }).then(data => {
+            console.log(data.data);
+            $("#gif_suggested").append("<div class='gif-box'><p>#"+gif+"</p><a href=' "+ data.data[0].bitly_url +"' target='_blank'><img src=' " + data.data[0].images.original.url + " ' /><a></div>");
+        });
+}
 
 
 function getSearchResults() {
+    $(".search-results").css("display", "block");
     search = document.getElementById("search").value;
     const found =
         fetch('//api.giphy.com/v1/gifs/search?q=' + search +
@@ -41,7 +52,12 @@ function getSearchResults() {
 }
 
 
-function changeLupa(){
+// let titulo_gif = data.data[i].title.trim().split(" ");
+// titulo_gif = titulo_gif.filter(del => del !== 'GIF');
+// console.log(titulo_gif);
+// $("#title-gifs").append(titulo_gif);
+
+function changeLupa() {
     document.getElementById("lupa").src = "/gifOS/images/lupa.svg"
 }
 

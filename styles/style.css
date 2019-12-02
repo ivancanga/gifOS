@@ -230,13 +230,54 @@ button,input{
 
 #inner_gifs div{
     height:300px; 
-    width: 25%; 
-    padding: 4px 4px;
+    width: 25%;
+    padding: 3px;
+    margin: 0px;
 }
 
 #inner_gifs div img{
     width: 100%;
     height: 100%;
+}
+
+#inner_gifs div img:hover,#gif_suggested div img:hover{
+    border: 1px dotted #110038;
+}
+
+.search-results{
+    display: none;
+}
+
+#gif_suggested {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+}
+
+#gif_suggested div {
+    margin: 0 8px;
+    padding: 3px;
+    max-width: 23.6%;
+    height: auto;
+    cursor: pointer;
+}
+
+#gif_suggested div img{
+    position: relative;
+    width: 100%;
+    height: 270px;
+}
+
+.gif-box{
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.gif-box p{
+    font-weight: bold;
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+    padding: 2px 4px;
 }
 
 @media screen and (max-width: 768px) {

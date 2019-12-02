@@ -52,26 +52,35 @@
                     <input class="search-input" autocomplete="off" id="search"
                         placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" oninput="changeLupa()">
                     <button type="submit" class="btn-search" onclick="getSearchResults()">
-                        <span class="btn-search-content"><img id="lupa" src="/gifOS/images/lupa_inactive.svg"/></span></button>
+                        <span class="btn-search-content"><img id="lupa"
+                                src="/gifOS/images/lupa_inactive.svg" /></span></button>
                 </div>
             </div>
         </header>
 
-        <div class="suggested">
+        <div class="search-results">
             <div class="title-section">Resultados de búsqueda: </div>
-
             <div id="inner_gifs"></div>
+        </div>
 
+        <div class="suggested">
+            <div class="title-section">Hoy te sugerimos: </div>
+            <div id="gif_suggested"></div>
         </div>
 
         <div class="trendings">
-            <div class="title-section">Tendencias:</div>
+            <div class="title-section">Tendencias: </div>
         </div>
-
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/gifOS/script.js"></script>
+    <script>
+        $(document).ready(suggestedGifs('SailorMoon'));
+        $(document).ready(suggestedGifs('SakuraCardCaptor'));
+        $(document).ready(suggestedGifs('Togepi'));
+        $(document).ready(suggestedGifs('Gatomon'));
+    </script>
 </body>
 
 </html>
