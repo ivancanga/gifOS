@@ -25,7 +25,7 @@ function suggestedGifs(gif) {
             return response.json()
         }).then(data => {
             console.log(data.data);
-            $("#gif_suggested").append("<div class='gif-box'><p>#"+gif+"</p><a href=' "+ data.data[0].bitly_url +"' target='_blank'><img src=' " + data.data[0].images.original.url + " ' /><span class='btn-gif'>Ver más...</span><a></div>");
+            $("#gif_suggested").append("<div class='gif-box'><p>#"+gif+"</p><img src=' " + data.data[0].images.original.url + " ' /><span class='btn-gif'><a href=' "+ data.data[0].bitly_url +"' target='_blank'>Ver más...</span><a></div>");
         });
 }
 
