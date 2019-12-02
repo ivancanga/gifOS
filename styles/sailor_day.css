@@ -47,3 +47,9 @@ body{
     color: white;
     background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
 }
+
+.btn-gif{
+    background: #3A72DB;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+}
