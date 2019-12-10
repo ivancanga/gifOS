@@ -51,6 +51,19 @@ function getSearchResults() {
     return found
 }
 
+function resultadoSugerido(){
+    search = document.getElementById("search").value;
+    fetch('//api.giphy.com/v1/gifs/search?q=' + search +
+        '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=1')
+        .then((response) => {
+            return response.json()
+        }).then(data => {
+            $("#sugerido1").html("");
+            console.log(data.data[0].title);
+            $("#sugerido1").append("<div>" + data.data[0].title + "</div>");
+        });
+}
+
 
 // let titulo_gif = data.data[i].title.trim().split(" ");
 // titulo_gif = titulo_gif.filter(del => del !== 'GIF');

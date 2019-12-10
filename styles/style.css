@@ -302,6 +302,14 @@ button,input{
     text-decoration: none;
 }
 
+.autocomplete-content{
+    border: 1px solid red;
+    padding: 16px;
+    color: #000000;
+}
+
+
+
 @media screen and (max-width: 768px) {
 
     .content{
