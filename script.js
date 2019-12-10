@@ -52,15 +52,19 @@ function getSearchResults() {
 }
 
 function resultadoSugerido(){
+    $(".autocomplete-content").css("display", "block");
     search = document.getElementById("search").value;
     fetch('//api.giphy.com/v1/gifs/search?q=' + search +
-        '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=1')
+        '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=3')
         .then((response) => {
             return response.json()
         }).then(data => {
             $("#sugerido1").html("");
-            console.log(data.data[0].title);
+            $("#sugerido2").html("");
+            $("#sugerido3").html("");
             $("#sugerido1").append("<div><a href='"+ data.data[0].bitly_url +"' target='_blank'>" + data.data[0].title + "</a></div>");
+            $("#sugerido2").append("<div><a href='"+ data.data[1].bitly_url +"' target='_blank'>" + data.data[1].title + "</a></div>");
+            $("#sugerido3").append("<div><a href='"+ data.data[2].bitly_url +"' target='_blank'>" + data.data[2].title + "</a></div>");
         });
 }
 
