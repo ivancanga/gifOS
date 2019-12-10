@@ -60,7 +60,7 @@ function resultadoSugerido(){
         }).then(data => {
             $("#sugerido1").html("");
             console.log(data.data[0].title);
-            $("#sugerido1").append("<div>" + data.data[0].title + "</div>");
+            $("#sugerido1").append("<div><a href='"+ data.data[0].bitly_url +"' target='_blank'>" + data.data[0].title + "</a></div>");
         });
 }
 
