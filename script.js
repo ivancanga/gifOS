@@ -54,6 +54,9 @@ function getSearchResults() {
 function resultadoSugerido(){
     $(".autocomplete-content").css("display", "block");
     search = document.getElementById("search").value;
+    if(search === ""){
+        $(".autocomplete-content").css("display", "none");
+    }
     fetch('//api.giphy.com/v1/gifs/search?q=' + search +
         '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=3')
         .then((response) => {
