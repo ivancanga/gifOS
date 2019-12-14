@@ -18,6 +18,7 @@ function active_sailor_day() {
     document.getElementById("lupa").src = "/gifOS/images/lupa_inactive.svg";
 }
 
+$("#rnd").append(Math.floor(Math.random() * 1000000));
 
 /////////////////////// funcion suggested terminada, refactorizar
 
