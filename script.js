@@ -18,39 +18,45 @@ function active_sailor_day() {
     document.getElementById("lupa").src = "/gifOS/images/lupa_inactive.svg";
 }
 
+
+/////////////////////// funcion suggested terminada, refactorizar
+
 function suggestedGifs(gif) {
     fetch('//api.giphy.com/v1/gifs/search?q=' + gif +
         '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=1')
         .then((response) => {
             return response.json()
-        }).then(data => {
-            console.log(data.data);
+        })
+        .then(data => {
             $("#gif_suggested").append("<div class='gif-box'><section class='gif-title-card'><p>#" + gif + "</p><img src='/gifOS/images/button3.svg' /></section><img class='gif-img' src=' " + data.data[0].images.original.url + " ' /><span class='btn-gif'><a href=' " + data.data[0].bitly_url + "' target='_blank'>Ver más...</span><a></div>");
         });
 }
 
-let myArray = ['SakuraCardCaptor','SailorMoon','Togepi','Gatomon','Lapras','Charmander','Sasuke','Squirtle']
-let rand = function(){
-    myArraynew = [];
+let myArray = ['SakuraCardCaptor', 'SailorMoon', 'Togepi', 'Gatomon', 'Lapras', 'Mewtwo', 'Bulvasaur', 'Squirtle', 'Medabots']
+let rand = function () {
+    let myArraynew = [];
     let compara = myArray[Math.floor(Math.random() * myArray.length)];
-    i = 0;
-    while(!myArraynew.includes(compara) && i<4){
-        myArraynew.push(compara);
+    while (myArraynew.length < 4) {
+        if (!myArraynew.includes(compara)) {
+            myArraynew.push(compara);
+        }
         compara = myArray[Math.floor(Math.random() * myArray.length)];
-        i++;
     }
+    console.log(myArraynew);
     return myArraynew;
 }
 
-console.log(rand()[0]);
+data = rand();
+if ($(window).width() < 500) {
+    $(document).ready(suggestedGifs(data[Math.floor(Math.random() * data.length)]));
+} else {
+    for (let i = 0; i < data.length; i++) {
+        $(document).ready(suggestedGifs(data[i]));
+    }
+}
 
-// if ($(window).width() <= 500) {
-//     $(document).ready(suggestedGifs(rand()));
-// } else {
-//     for(var i = 0; i < 4 ; i++){
-//         $(document).ready(suggestedGifs(rand()));
-//     }
-// }
+////////////////////////////////////
+
 
 
 

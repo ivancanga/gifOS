@@ -307,10 +307,40 @@ input {
 
 .autocomplete-content {
     display: none;
-    border: 1px solid red;
-    padding: 16px;
+    padding: 0 16px;
     color: #000000;
 }
+
+.autocomplete-content p {
+    padding: 2px;
+    margin-bottom: 10px;
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.autocomplete-content p:hover {
+    cursor: pointer;
+    background: #DBDBDB;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    
+}
+
+.autocomplete-content a {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1rem;
+    color: #110038;
+    letter-spacing: 0;
+    display: block;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 8px;
+}
+.autocomplete-content a:hover{
+    border: 1px dotted #110038;
+}
+
 
 
 
@@ -381,12 +411,14 @@ input {
         padding: 4px 4px;
     }
 
-    #gif_suggested{
+    #gif_suggested {
         display: grid;
         grid-template-columns: repeat(1, 100%);
         grid-column-gap: 10px;
         justify-content: center;
-    };
+    }
+
+    ;
 
     #gif_suggested:nth-child(-n+3) {
         border: 1px solid red;
