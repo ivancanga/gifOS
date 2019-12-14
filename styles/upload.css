@@ -1,0 +1,80 @@
+.back-arrow {
+    margin: 0 20px 10px 0;
+}
+
+.create-gif-section {
+    margin: 40px auto;
+    max-width: 55%;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    font-size: 0.8rem;
+}
+
+.create-gif-title {
+    color: white;
+    font-weight: bolder;
+    margin: 3px;
+    padding: 1px 4px;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+.create-gif-window {
+    padding: 15px;
+    display: flex;
+}
+
+.create-gif-window * {
+    padding: 0 5px;
+}
+
+.create-gif-text {
+    margin-top: 20px;
+}
+
+.it-bld {
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.create-gif-btns {
+    margin-top: 10px;
+    padding: 10px;
+    float: right;
+}
+
+.create-gif-btns * {
+    margin: 0 4px;
+}
+
+.btn-create-gif {
+    width: 144px;
+    height: 36px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1rem;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.cancel:hover{
+    background: rgb(236, 222, 233);
+}
+
+.cancel {
+    background: #FFF4FD;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.cancel:hover{
+    background: rgb(236, 222, 233);
+}
+
+.confirm {
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.confirm:hover{
+    background: rgb(223, 181, 219);
+}
