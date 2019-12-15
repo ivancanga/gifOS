@@ -5,7 +5,7 @@
 .create-gif-section,
 .video-recording {
     margin: 40px auto;
-    max-width: 55%;
+    max-width: 60%;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     font-size: 0.8rem;
@@ -43,6 +43,7 @@
 }
 
 .create-gif-btns {
+    display: flex;
     margin-top: 10px;
     padding: 10px;
     float: right;
@@ -91,7 +92,7 @@
     margin: 10px auto;
 }
 
-.video-container{
+.video-container {
     padding: 0 4px;
 }
 
@@ -118,4 +119,38 @@
 .capture-btn span {
     padding: 3px;
     vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+
+    .create-gif-section,
+    .video-recording{
+        max-width: 100%;
+    }
+
+    .create-gif-window {
+        display: block;
+    }
+
+    .create-gif-btns {
+        display: flex;
+        flex-flow: column wrap;
+        float: none;
+        align-items: center;
+    }
+
+    .cancel{
+        display: none;
+    }
+
+    .window-img,.subtitle-window{
+        padding: 4px 0;
+        text-align: center;
+    }
+
+    .create-gif-text {
+        margin-top: 5px;
+    }
+
+
 }
