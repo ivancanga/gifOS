@@ -53,8 +53,7 @@
                         <div class="create-gif-btns">
                             <a href="index.html"><button
                                     class="btn-create-gif cancel"><span>Cancelar</span></button></a>
-                            <button class="btn-create-gif confirm"
-                                onclick="getStream()"><span>Comenzar</span></button>
+                            <button class="btn-create-gif confirm" onclick="getStream()"><span>Comenzar</span></button>
                         </div>
                     </div>
                 </div>
@@ -62,20 +61,23 @@
         </section>
 
         <section class="video-recording">
-            <p class="create-gif-title"><span id="titleBox">Un chequeo antes de empezar</span><img class='close-icon' src="/gifOS/images/close.svg"
-                        alt=""></p>
+            <p class="create-gif-title"><span id="titleBox">Un chequeo antes de empezar</span><img class='close-icon'
+                    src="/gifOS/images/close.svg" alt=""></p>
             <div class="video-container">
                 <video autoplay="true" id="videoElement"></video>
             </div>
             <div class="capture-btn">
-                <button class="btn-create-gif confirm" onclick="startRecording()"><img class="btn-camera" src="/gifOS/images/camera.svg"
-                        alt=""><span>Capturar</span></button>
+                <button class="btn-create-gif confirm" onclick="startRecording()"><img class="btn-camera"
+                        src="/gifOS/images/camera.svg" alt=""><span>Capturar</span></button>
+                <button class="btn-create-gif stop" onclick="stopRecording()"><img class="btn-camera"
+                        src="/gifOS/images/recording.svg" alt=""><span>Listo</span></button>
+                <div class="btns-upload-gif">
+                    <button class="btn-create-gif repeat" onclick="location.href='upload.html'"><span>Repetir
+                            Captura</span></button>
+                    <button class="btn-create-gif upload" onclick="uploadGif()"><span>Subir Guifo</span></button>
+                </div>
             </div>
         </section>
-
-        <button class="btn-create-gif" onclick="stopRecording()">Detener</button>
-
-
 
         <div class="mis-guifos">
             <div class="title-section">Mis guifos</div>
@@ -87,7 +89,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
     <script src="/gifOS/scripts/create-gif.js"></script>
-    
+
 </body>
 
 </html>

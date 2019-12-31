@@ -20,7 +20,8 @@ function startRecording() {
     recorder.startRecording();
 
     document.getElementById('titleBox').innerHTML = "Capturando Tu Guifo";
-
+    $(".confirm").css("display", "none");
+    $(".stop").css("display", "block");
 }
 
 function stopRecording() {
@@ -39,6 +40,8 @@ function stopRecording() {
     stream.getTracks().forEach(function(track) {
         track.stop();
     });
+    $(".stop").css("display", "none");
+    $(".btns-upload-gif").css("display", "flex");
 }
 
 function uploadGif() {
