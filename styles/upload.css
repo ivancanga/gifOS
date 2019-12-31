@@ -19,7 +19,7 @@
     background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
 }
 
-.create-gif-title span {
+.create-gif-title .close-icon {
     float: right;
     margin-top: 1px;
 }
