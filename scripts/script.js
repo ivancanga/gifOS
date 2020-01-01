@@ -103,6 +103,47 @@ function resultadoSugerido() {
 }
 
 
+// Trending gifs
+
+function trendingGifs() {
+    fetch('//api.giphy.com/v1/gifs/trending?&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=16')
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            for (elem in data.data) {
+                // guardo ancho y alto en una variable para medir si es cuadrado o wide, si se acerca a 1 es cuadrado, si no, wide
+                // toma width 25% si es cuadrado, 50% si es wide, para el ancho del gif en la fila
+                height = data.data[elem].images.original.height;
+                width = data.data[elem].images.original.width;
+                squareCheck = width / height;
+                if (squareCheck < 1.3) {
+                    w = 25;
+                } else {
+                    w = 50;
+                }
+
+                //ACA VIENE EL GUISO u.u
+
+                // yo lo que quiero es que las filas sean fill content, posibilidades (en porcentaje): 
+                // 4 elementos cuadrados (25,25,25,25)
+                // 2 elementos wide (50,50)
+                // 3 elementos mezcla (25,25,50) (25,50,25) (50,25,50)
+                // o sea, SIEMPRE contWid tiene que dar 100
+
+                //si el ancho del cuarto elemento (cont = 4) supera el 100 (contWid), el ancho de ese gif tiene que ser de 25% y se llena la fila (cont = 0)
+                //si el ancho de los dos primeros elementos (cont = 2) son 50 (contWid = 100), se llena la fila (cont,contWid = 0)
+                if(w == 50){
+                    $('#giftrending').append(`<div class='gif' style=''><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
+                }else{
+                    $('#giftrending').append(`<div class='gif'><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
+                }
+            }
+        })
+}
+
+trendingGifs();
+
 // let titulo_gif = data.data[i].title.trim().split(" ");
 // titulo_gif = titulo_gif.filter(del => del !== 'GIF');
 // console.log(titulo_gif);
