@@ -13,14 +13,14 @@ function getSearchResults() {
                 $("#inner_gifs").html("");
                 console.log(data.data);
                 for (var i = 0; i < 20; i++) {
-                    $("#inner_gifs").append(`<div class='gif'><img src=${data.data[i].images.original.url}/><div class='title-gif' id='gif${i+1}'></div></div>`);
+                    $("#inner_gifs").append(`<div class='gif'><img src=${data.data[i].images.original.url}/><div class='title-gif' id='gif${i + 1}'></div></div>`);
                     let titulo_gif = data.data[i].title.trim().split(" ");
                     titulo_gif = titulo_gif.filter(del => del !== 'GIF');
                     console.log(titulo_gif);
                     for (var j = 0; j <= 2; j++) {
                         console.log(titulo_gif[j]);
                         if (titulo_gif[j] !== undefined && titulo_gif[j] !== "") {
-                            $(`#gif${i+1}`).append(`<span>#${titulo_gif[j]}</span>`);
+                            $(`#gif${i + 1}`).append(`<span>#${titulo_gif[j]}</span>`);
                         }
                     }
                 }
@@ -108,8 +108,7 @@ function trendingGifs() {
         qtyRes = 6;
     } else {
         qtyRes = 24;
-        }  
-    console.log(qtyRes);  
+    }
     fetch(`//api.giphy.com/v1/gifs/trending?&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=${qtyRes}`)
         .then(response => {
             return response.json();
@@ -121,9 +120,9 @@ function trendingGifs() {
                 squareCheck = width / height;
 
                 if (squareCheck < 1.3 || $(window).width() < 500) {
-                    $('#giftrending').append(`<div class='gif'><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
+                    $('#giftrending').append(`<div class='gif sq'><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
                 } else {
-                    $('#giftrending').append(`<div class='gif' style='grid-column: span 2'><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
+                    $('#giftrending').append(`<div class='gif wide' style='grid-column: span 2'><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
                 }
             }
         })

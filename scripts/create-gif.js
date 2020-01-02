@@ -10,7 +10,7 @@ async function getStream() {
 function startRecording() {
     let stream = video.srcObject;
     recorder = RecordRTC(stream, {
-        type: 'gif',
+        type: 'webm',
         frameRate: 1,
         quality: 10,
         onGifRecordingStarted: function () {
@@ -35,8 +35,11 @@ function stopRecording() {
         document.getElementById('titleBox').innerHTML = "Vista Previa";
 
         let data = new FormData();
-        data.append('file', blob, 'myGif.gif');
-        console.log(data.get('file'))
+        data.append('file', blob, 'myGif.webm');
+        console.log(data.get('file'));
+
+        uploadGif(data.get('file'));
+
     });
     stream.getTracks().forEach(function (track) {
         track.stop();
@@ -49,7 +52,7 @@ function uploadGif(file) {
     var miInit = {
         method: 'POST',
         mode: 'no-cors',
-        body: file,
+        data: file,
     };
     fetch('//upload.giphy.com/v1/gifs?&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx', miInit)
         .then(response => {
