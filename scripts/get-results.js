@@ -120,7 +120,7 @@ function trendingGifs() {
                 imgURL = data.data[elem].images.original.url;
                 $('#giftrending').append(`<div class='gif'><img src='${imgURL}' /></div>`);
                 if (squareCheck > 1.3 && $(window).width() > 500) {
-                    document.querySelector(".gif:last-child").style.gridColumn = "span 2";
+                    document.querySelector(".gif:last-child").classList.add("double-span");
                 }
             }
         })
