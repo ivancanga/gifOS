@@ -1,6 +1,6 @@
 
 const APIurl = "//api.giphy.com/v1/gifs/"; 
-const APIkey = "xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx"
+const APIkey = "xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx";
 
 // Resultados de busqueda
 
@@ -117,7 +117,8 @@ function trendingGifs() {
                 height = data.data[elem].images.original.height;
                 width = data.data[elem].images.original.width;
                 squareCheck = width / height;
-                $('#giftrending').append(`<div class='gif'><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
+                imgURL = data.data[elem].images.original.url;
+                $('#giftrending').append(`<div class='gif'><img src='${imgURL}' /></div>`);
                 if (squareCheck > 1.3 && $(window).width() > 500) {
                     document.querySelector(".gif:last-child").style.gridColumn = "span 2";
                 }
