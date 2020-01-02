@@ -1,26 +1,28 @@
 
+const APIurl = "//api.giphy.com/v1/gifs/"; 
+const APIkey = "xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx"
+
 // Resultados de busqueda
 
 function getSearchResults() {
     $(".search-results").css("display", "block");
     search = document.getElementById("search").value;
     const found =
-        fetch('//api.giphy.com/v1/gifs/search?q=' + search +
-            '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx')
+        fetch(`${APIurl}search?q=${search}&api_key=${APIkey}`)
             .then((response) => {
                 return response.json()
             }).then(data => {
                 $("#inner_gifs").html("");
                 console.log(data.data);
                 for (var i = 0; i < 20; i++) {
-                    $("#inner_gifs").append(`<div class='gif'><img src=${data.data[i].images.original.url}/><div class='title-gif' id='gif${i + 1}'></div></div>`);
+                    $("#inner_gifs").append(`<div class='gif'><img src=${data.data[i].images.original.url}/><div class='title-gif' id='gif-${i + 1}'></div></div>`);
                     let titulo_gif = data.data[i].title.trim().split(" ");
                     titulo_gif = titulo_gif.filter(del => del !== 'GIF');
                     console.log(titulo_gif);
                     for (var j = 0; j <= 2; j++) {
                         console.log(titulo_gif[j]);
                         if (titulo_gif[j] !== undefined && titulo_gif[j] !== "") {
-                            $(`#gif${i + 1}`).append(`<span>#${titulo_gif[j]}</span>`);
+                            $(`#gif-${i + 1}`).append(`<span>#${titulo_gif[j]}</span>`);
                         }
                     }
                 }
@@ -33,7 +35,7 @@ function getSearchResults() {
     return found
 }
 
-// Autocompletar 
+// Autocompletar (refactorizar)
 
 function resultadoSugerido() {
     $(".autocomplete-content").css("display", "block");
@@ -41,8 +43,7 @@ function resultadoSugerido() {
     if (search === "") {
         $(".autocomplete-content").css("display", "none");
     }
-    fetch('//api.giphy.com/v1/gifs/search?q=' + search +
-        '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=3')
+    fetch(`${APIurl}search?q=${search}&api_key=${APIkey}&limit=3`)
         .then((response) => {
             return response.json()
         }).then(data => {
@@ -55,7 +56,7 @@ function resultadoSugerido() {
         });
 }
 
-// Limpiar resultados
+// Limpiar resultados (pasar a JS dom)
 
 function clearResults() {
     $("#inner_gifs").html("");
@@ -65,11 +66,10 @@ function clearResults() {
 }
 
 
-// Random gifs, (refactorizar)
+// Random gifs, (refactorizar ese then data)
 
 function suggestedGifs(gif) {
-    fetch('//api.giphy.com/v1/gifs/search?q=' + gif +
-        '&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=1')
+    fetch(`${APIurl}search?q=${gif}&api_key=${APIkey}&limit=1`)
         .then((response) => {
             return response.json()
         })
@@ -88,7 +88,6 @@ let rand = function () {
         }
         compara = myArray[Math.floor(Math.random() * myArray.length)];
     }
-    console.log(myArraynew);
     return myArraynew;
 }
 
@@ -104,12 +103,12 @@ if ($(window).width() < 500) {
 // Trending gifs
 
 function trendingGifs() {
-    if ($(window).width() < 500) {
-        qtyRes = 6;
-    } else {
+    if ($(window).width() > 500) {
         qtyRes = 24;
+    } else {
+        qtyRes = 6;
     }
-    fetch(`//api.giphy.com/v1/gifs/trending?&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx&limit=${qtyRes}`)
+    fetch(`${APIurl}trending?&api_key=${APIkey}&limit=${qtyRes}`)
         .then(response => {
             return response.json();
         })
@@ -118,11 +117,9 @@ function trendingGifs() {
                 height = data.data[elem].images.original.height;
                 width = data.data[elem].images.original.width;
                 squareCheck = width / height;
-
-                if (squareCheck < 1.3 || $(window).width() < 500) {
-                    $('#giftrending').append(`<div class='gif sq'><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
-                } else {
-                    $('#giftrending').append(`<div class='gif wide' style='grid-column: span 2'><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
+                $('#giftrending').append(`<div class='gif'><img src=' ` + data.data[elem].images.original.url + ` ' /></div>`);
+                if (squareCheck > 1.3 && $(window).width() > 500) {
+                    document.querySelector(".gif:last-child").style.gridColumn = "span 2";
                 }
             }
         })
