@@ -35,10 +35,21 @@ function stopRecording() {
         document.getElementById('titleBox').innerHTML = "Vista Previa";
 
         let data = new FormData();
-        data.append('file', blob, 'myGif.webm');
+        data.append('file', blob, 'myGif.gif');
         console.log(data.get('file'));
 
-        uploadGif(data.get('file'));
+        var miInit = {
+            headers: {
+                    
+            },
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify(data.get('file')),
+        };
+        fetch('//upload.giphy.com/v1/gifs?&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx', miInit)
+            .then(response => {
+                console.log(response);
+            })
 
     });
     stream.getTracks().forEach(function (track) {
@@ -48,14 +59,14 @@ function stopRecording() {
     $(".btns-upload-gif").css("display", "flex");
 }
 
-function uploadGif(file) {
-    var miInit = {
-        method: 'POST',
-        mode: 'no-cors',
-        data: file,
-    };
-    fetch('//upload.giphy.com/v1/gifs?&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx', miInit)
-        .then(response => {
-            console.log(response);
-        })
-}
+// function uploadGif(file) {
+//     var miInit = {
+//         method: 'POST',
+//         mode: 'no-cors',
+//         data: file,
+//     };
+//     fetch('//upload.giphy.com/v1/gifs?&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx', miInit)
+//         .then(response => {
+//             console.log(response);
+//         })
+// }

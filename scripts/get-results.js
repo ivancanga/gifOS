@@ -1,5 +1,5 @@
 
-const APIurl = "//api.giphy.com/v1/gifs/"; 
+const APIurl = "//api.giphy.com/v1/gifs/";
 const APIkey = "xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx";
 
 // Resultados de busqueda
@@ -16,11 +16,9 @@ function getSearchResults() {
                 console.log(data.data);
                 for (var i = 0; i < 20; i++) {
                     $("#inner_gifs").append(`<div class='gif'><img src=${data.data[i].images.original.url}/><div class='title-gif' id='gif-${i + 1}'></div></div>`);
-                    let titulo_gif = data.data[i].title.trim().split(" ");
+                    titulo_gif = data.data[i].title.trim().split(" ");
                     titulo_gif = titulo_gif.filter(del => del !== 'GIF');
-                    console.log(titulo_gif);
                     for (var j = 0; j <= 2; j++) {
-                        console.log(titulo_gif[j]);
                         if (titulo_gif[j] !== undefined && titulo_gif[j] !== "") {
                             $(`#gif-${i + 1}`).append(`<span>#${titulo_gif[j]}</span>`);
                         }
@@ -113,12 +111,19 @@ function trendingGifs() {
             return response.json();
         })
         .then(data => {
-            for (elem in data.data) {
-                height = data.data[elem].images.original.height;
-                width = data.data[elem].images.original.width;
+            for (let i = 0; i <= data.data.length; i++) {
+                height = data.data[i].images.original.height;
+                width = data.data[i].images.original.width;
                 squareCheck = width / height;
-                imgURL = data.data[elem].images.original.url;
-                $('#giftrending').append(`<div class='gif'><img src='${imgURL}' /></div>`);
+                imgURL = data.data[i].images.original.url;
+                $('#giftrending').append(`<div class='gif'><img src='${imgURL}' /><div class='title-gif' id='trend-gif-${i + 1}'></div></div>`);
+                titulo_gif = data.data[i].title.trim().split(" ");
+                titulo_gif = titulo_gif.filter(del => del !== 'GIF');
+                for (var j = 0; j <= 3; j++) {
+                    if (titulo_gif[j] !== undefined && titulo_gif[j] !== "") {
+                        $(`#trend-gif-${i + 1}`).append(`<span>#${titulo_gif[j]}</span>`);
+                    }
+                }
                 if (squareCheck > 1.3 && $(window).width() > 500) {
                     document.querySelector(".gif:last-child").classList.add("double-span");
                 }
