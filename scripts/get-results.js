@@ -2,29 +2,45 @@
 const APIurl = "//api.giphy.com/v1/gifs/";
 const APIkey = "xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx";
 
-// Resultados de busqueda
+// Resultados de busqueda OK
 
 function getSearchResults() {
-    $(".search-results").css("display", "block");
+    document.querySelector(".search-results").style.display = 'block';
     search = document.getElementById("search").value;
     const found =
         fetch(`${APIurl}search?q=${search}&api_key=${APIkey}`)
-            .then((response) => {
+            .then(response => {
                 return response.json()
-            }).then(data => {
-                $("#inner_gifs").html("");
+            })
+            .then(data => {
+                innerGifs = document.getElementById('inner_gifs');
+                innerGifs.innerHTML = "";
                 for (var i = 0; i < 20; i++) {
-                    $("#inner_gifs").append(`<div class='gif'><img src=${data.data[i].images.original.url}/><div class='title-gif' id='gif-${i + 1}'></div></div>`);
+                    imgURL = data.data[i].images.original.url;
+                    gifDiv = document.createElement('div');
+                    gifDiv.className = 'gif';
+                    innerGifs.appendChild(gifDiv);
+
+                    imgChild = document.createElement('img');
+                    imgChild.src = imgURL;
+                    titleDiv = document.createElement('div');
+                    titleDiv.className = 'title-gif';
+                    titleDiv.id = `gif-${i+1}`;
+                    
+                    gifDiv.append(imgChild,titleDiv);
+
                     titulo_gif = data.data[i].title.trim().split(" ");
                     titulo_gif = titulo_gif.filter(del => del !== 'GIF');
                     for (var j = 0; j <= 2; j++) {
                         if (titulo_gif[j] !== undefined && titulo_gif[j] !== "") {
-                            $(`#gif-${i + 1}`).append(`<span>#${titulo_gif[j]}</span>`);
+                            spanChild = document.createElement('span');
+                            spanChild.innerHTML = `#${titulo_gif[j]}`;
+                            document.getElementById(`gif-${i + 1}`).appendChild(spanChild);
                         }
                     }
                 }
-                $(".suggested").css("display", "none");
-                $(".trendings").css("display", "none");
+                document.querySelector(".suggested").style.display = 'none';
+                document.querySelector(".trendings").style.display = 'none';
             })
             .catch((error) => {
                 return error
