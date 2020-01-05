@@ -16,6 +16,7 @@ function getSearchResults() {
                 innerGifs = document.getElementById('inner_gifs');
                 innerGifs.innerHTML = "";
                 for (var i = 0; i < 20; i++) {
+                    gifID = data.data[i].id;
                     imgURL = data.data[i].images.original.url;
                     gifDiv = document.createElement('div');
                     gifDiv.className = 'gif';
@@ -25,9 +26,9 @@ function getSearchResults() {
                     imgChild.src = imgURL;
                     titleDiv = document.createElement('div');
                     titleDiv.className = 'title-gif';
-                    titleDiv.id = `gif-${i+1}`;
+                    titleDiv.id = `gif-${i + 1}`;
 
-                    gifDiv.append(imgChild,titleDiv);
+                    gifDiv.append(imgChild, titleDiv);
 
                     titulo_gif = data.data[i].title.trim().split(" ");
                     titulo_gif = titulo_gif.filter(del => del !== 'GIF');
@@ -38,6 +39,14 @@ function getSearchResults() {
                             document.getElementById(`gif-${i + 1}`).appendChild(spanChild);
                         }
                     }
+                    saveBtnChild = document.createElement('p');
+                    saveBtnChild.className = 'save-gif';
+                    saveBtnChild.id = gifID;
+                    saveBtnChild.innerHTML = 'Guardar gif';
+                    saveBtnChild.onclick = function () {
+                        localStorage.setItem(`gif-${this.id}`, this.id);
+                    }
+                    gifDiv.append(saveBtnChild);
                 }
                 document.querySelector(".autocomplete-content").style.display = 'none';
                 document.querySelector(".suggested").style.display = 'none';

@@ -32,7 +32,6 @@
 }
 
 .title-gif{
-    display: none;
     color: white;
     font-size: 0.9rem;
     font-weight: bolder;
@@ -42,9 +41,17 @@
     line-height: 1.6rem;
 }
 
-.gif img:hover ~ .title-gif{
-    display: flex;
+.save-gif{
+    position: absolute;
+    color: white;
+    background-color: black;
+    transform: translate(0%, -400%);
 }
+
+/* .gif img:hover ~ .title-gif,
+.gif img:hover ~ .save-gif{
+    display: block;
+} */
 
 .title-gif span{
     padding: 1px 3px;
