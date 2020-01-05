@@ -13,7 +13,6 @@ function getSearchResults() {
                 return response.json()
             }).then(data => {
                 $("#inner_gifs").html("");
-                console.log(data.data);
                 for (var i = 0; i < 20; i++) {
                     $("#inner_gifs").append(`<div class='gif'><img src=${data.data[i].images.original.url}/><div class='title-gif' id='gif-${i + 1}'></div></div>`);
                     titulo_gif = data.data[i].title.trim().split(" ");
@@ -33,24 +32,31 @@ function getSearchResults() {
     return found
 }
 
-// Autocompletar (refactorizar)
+// Autocompletar OK
 
 function resultadoSugerido() {
-    $(".autocomplete-content").css("display", "block");
+    autoComp = document.querySelector(".autocomplete-content");
+    autoComp.style.display = 'block';
     search = document.getElementById("search").value;
     if (search === "") {
-        $(".autocomplete-content").css("display", "none");
+        autoComp.style.display = 'none';
     }
     fetch(`${APIurl}search?q=${search}&api_key=${APIkey}&limit=3`)
-        .then((response) => {
+        .then(response => {
             return response.json()
-        }).then(data => {
-            $("#sugerido1").html("");
-            $("#sugerido2").html("");
-            $("#sugerido3").html("");
-            $("#sugerido1").append("<div><a href='" + data.data[0].bitly_url + "' target='_blank'>" + data.data[0].title + "</a></div>");
-            $("#sugerido2").append("<div><a href='" + data.data[1].bitly_url + "' target='_blank'>" + data.data[1].title + "</a></div>");
-            $("#sugerido3").append("<div><a href='" + data.data[2].bitly_url + "' target='_blank'>" + data.data[2].title + "</a></div>");
+        })
+        .then(data => {
+            autoComp.innerHTML = "";
+            for (let i = 0; i < data.data.length; i++) {
+                imgTITLE = data.data[i].title;
+                if (imgTITLE !== "") {
+                    imgURL = data.data[i].bitly_url;
+                    sug = document.createElement('p');
+                    autoComp.appendChild(sug);
+                    innerS = `<a href="${imgURL}" target='_blank'>${imgTITLE}</a>`;
+                    sug.innerHTML = innerS;
+                }
+            }
         });
 }
 
