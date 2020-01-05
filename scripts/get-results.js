@@ -2,7 +2,7 @@
 const APIurl = "//api.giphy.com/v1/gifs/";
 const APIkey = "xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx";
 
-// Resultados de busqueda OK
+// Resultados de busqueda
 
 function getSearchResults() {
     document.querySelector(".search-results").style.display = 'block';
@@ -26,7 +26,7 @@ function getSearchResults() {
                     titleDiv = document.createElement('div');
                     titleDiv.className = 'title-gif';
                     titleDiv.id = `gif-${i+1}`;
-                    
+
                     gifDiv.append(imgChild,titleDiv);
 
                     titulo_gif = data.data[i].title.trim().split(" ");
@@ -39,6 +39,7 @@ function getSearchResults() {
                         }
                     }
                 }
+                document.querySelector(".autocomplete-content").style.display = 'none';
                 document.querySelector(".suggested").style.display = 'none';
                 document.querySelector(".trendings").style.display = 'none';
             })
@@ -48,7 +49,7 @@ function getSearchResults() {
     return found
 }
 
-// Autocompletar OK
+// Autocompletar
 
 function resultadoSugerido() {
     autoComp = document.querySelector(".autocomplete-content");
@@ -76,13 +77,13 @@ function resultadoSugerido() {
         });
 }
 
-// Limpiar resultados (pasar a JS dom)
+// Limpiar resultados
 
 function clearResults() {
-    $("#inner_gifs").html("");
-    $(".suggested").css("display", "block");
-    $(".trendings").css("display", "block");
-    $(".search-results").css("display", "none");
+    document.getElementById('inner_gifs').innerHTML = "";
+    document.querySelector(".suggested").style.display = 'block';
+    document.querySelector(".trendings").style.display = 'block';
+    document.querySelector(".search-results").style.display = 'none';
 }
 
 
@@ -120,7 +121,7 @@ if ($(window).width() < 500) {
     }
 }
 
-// Trending gifs
+// Trending gifs (refactorizar)
 
 function trendingGifs() {
     if ($(window).width() > 500) {
