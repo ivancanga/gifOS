@@ -18,11 +18,20 @@ function active_sailor_day() {
     document.getElementById("lupa").src = "/gifOS/images/lupa_inactive.svg";
 }
 
+function changeLupa() {
+    document.getElementById("lupa").src = "/gifOS/images/lupa.svg"
+}
+
+function showLsItems(){
+    document.getElementById("gif-count").innerHTML = `(${(localStorage.length)})`;
+}
+
 window.onload = function() {
 
     $("#rnd").append(Math.floor(Math.random() * 10000000));
 
     trendingGifs();
+    showLsItems();
 
     $(function () {
         $(".search-bar input").keypress(function (e) {
@@ -34,9 +43,5 @@ window.onload = function() {
             }
         });
     });
-}
-
-function changeLupa() {
-    document.getElementById("lupa").src = "/gifOS/images/lupa.svg"
 }
 

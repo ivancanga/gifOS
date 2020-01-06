@@ -37,10 +37,6 @@ function getSearchResults() {
                             spanChild = document.createElement('span');
                             spanChild.innerHTML = `#${titulo_gif[j]}`;
                             document.getElementById(`gif-${i + 1}`).appendChild(spanChild);
-                        }else{
-                            spanChild = document.createElement('span');
-                            spanChild.innerHTML = `#${search}`;
-                            document.getElementById(`gif-${i + 1}`).appendChild(spanChild);
                         }
                     }
 
@@ -50,9 +46,10 @@ function getSearchResults() {
                     saveBtnChild.innerHTML = `<img title='Guardar Gifos' src='/gifOS/images/save-icon.png'>`;
                     saveBtnChild.onclick = function () {
                         localStorage.setItem(`gif-${this.id}`, this.id);
+                        showLsItems();
                     }
                     gifDiv.append(saveBtnChild);
-                    
+
                 }
                 document.querySelector(".autocomplete-content").style.display = 'none';
                 document.querySelector(".suggested").style.display = 'none';
