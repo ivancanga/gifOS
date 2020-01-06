@@ -6,19 +6,15 @@
 }
 
 .gif{
-    padding: 5px;
+    padding: 4px;
     height: 100%;
-    max-height: 300px;
+    height: 300px;
     width: 100%;
+    position: relative;
 }
 
 .double-span{
     grid-column: span 2 / auto;
-}
-
-.gif:hover{
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .gif img{
@@ -32,26 +28,33 @@
 }
 
 .title-gif{
+    display: none;
     color: white;
     font-size: 0.9rem;
     font-weight: bolder;
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
     transform: translate(0%, -125%);
     margin: 1px;
     line-height: 1.6rem;
 }
 
 .save-gif{
+    display: none;
     position: absolute;
-    color: white;
-    background-color: black;
-    transform: translate(0%, -400%);
+    top: 90%;
+    left: 80%;
+    transform: translate(0%, -50%);
+    cursor: pointer;
 }
 
-/* .gif img:hover ~ .title-gif,
-.gif img:hover ~ .save-gif{
+.gif:hover .save-gif,
+.gif:hover .title-gif{
     display: block;
-} */
+}
+
+.save-gif img:hover{
+    border: 1px solid transparent;
+    border-bottom: 2px solid rgba(51, 51, 51, 0.178);
+}
 
 .title-gif span{
     padding: 1px 3px;
