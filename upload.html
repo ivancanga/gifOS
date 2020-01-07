@@ -90,6 +90,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
     <script src="/gifOS/scripts/create-gif.js"></script>
 
+    <script>
+        if(localStorage.getItem('theme') == 2){
+            document.getElementById("theme").href = '/gifOS/styles/sailor_night.css';
+        }
+    </script>
+
 </body>
 
 </html>
