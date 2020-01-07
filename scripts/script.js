@@ -49,6 +49,7 @@ window.onload = function () {
     // Si alguna vez se predefinió el tema oscuro, permanece el tema por el value en LS
     if (localStorage.getItem('theme') == 2) {
         document.getElementById("theme").href = '/gifOS/styles/sailor_night.css';
+        document.getElementById("img-header").src = "/gifOS/images/gifOF_logo_dark.png";
     }
 
     $("#rnd").append(Math.floor(Math.random() * 10000000));
