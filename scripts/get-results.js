@@ -45,7 +45,13 @@ function getSearchResults() {
                     saveBtnChild.id = gifID;
                     saveBtnChild.innerHTML = `<img title='Guardar Gifos' src='/gifOS/images/save-icon.png'>`;
                     saveBtnChild.onclick = function () {
-                        localStorage.setItem(`gif-${this.id}`, this.id);
+                        fetch(`${APIurl}${this.id}?&api_key=${APIkey}`)
+                            .then(response => {
+                                return response.json()
+                            })
+                            .then(data => {
+                                localStorage.setItem(`gif-${this.id}`, JSON.stringify(data.data));
+                            })
                         showLsItems();
                     }
                     gifDiv.append(saveBtnChild);
@@ -171,13 +177,12 @@ function trendingGifs() {
 
 (function displayGifs() {
     for (let i = 0; i < (localStorage.length); i++) {
-        if (localStorage.key(i) !== 'theme') {
+        if (localStorage.key(i) !== 'theme' && localStorage !== null) {
             gifID = localStorage.getItem((localStorage.key(i)));
             gif = document.createElement('img');
             gif.id = gifID;
             gif.src = `https://media2.giphy.com/media/${gifID}/giphy.gif`;
             document.getElementById('mygifos').appendChild(gif);
         }
-        console.log(localStorage.getItem((localStorage.key(i))));
     }
 })();
