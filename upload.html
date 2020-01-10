@@ -61,20 +61,41 @@
         </section>
 
         <section class="video-recording">
+
             <p class="create-gif-title"><span id="titleBox">Un chequeo antes de empezar</span><img class='close-icon'
                     src="/gifOS/images/close.svg" alt=""></p>
             <div class="video-container">
                 <video autoplay="true" id="videoElement"></video>
+                <div class="gif-preview-container"><img id="gif-preview" alt=""></div>
             </div>
+
             <div class="capture-btn">
                 <button class="btn-create-gif confirm" onclick="startRecording()"><img class="btn-camera"
                         src="/gifOS/images/camera.svg" alt=""><span>Capturar</span></button>
                 <button class="btn-create-gif stop" onclick="stopRecording()"><img class="btn-camera"
                         src="/gifOS/images/recording.svg" alt=""><span>Listo</span></button>
+
                 <div class="btns-upload-gif">
-                    <button class="btn-create-gif repeat" onclick="location.href='upload.html'"><span>Repetir
+                    <div id="timer"></div>
+                    <div class="buffer-bar"><img src="/gifOS/images/forward.svg" class="forward">
+                        <div class="buffer">
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                            <div class="buffer-bar-item"></div>
+                        </div>
+                    </div>
+                    <button class="btn-create-gif repeat push" onclick="location.href='upload.html'"><span>Repetir
                             Captura</span></button>
-                    <button class="btn-create-gif upload" onclick="uploadGif()"><span>Subir Guifo</span></button>
+                    <button class="btn-create-gif upload" id="upload"><span>Subir Guifo</span></button>
                 </div>
             </div>
         </section>
@@ -91,7 +112,7 @@
     <script src="/gifOS/scripts/create-gif.js"></script>
 
     <script>
-        if(localStorage.getItem('theme') == 2){
+        if (localStorage.getItem('theme') == 2) {
             document.getElementById("theme").href = '/gifOS/styles/sailor_night.css';
             document.getElementById("img-header").src = "/gifOS/images/gifOF_logo_dark.png";
         }

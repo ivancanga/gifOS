@@ -83,7 +83,7 @@
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
-.stop{
+.stop {
     display: none;
     color: white;
     background: #FF6161;
@@ -91,21 +91,25 @@
     box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
 }
 
-.btns-upload-gif{
+.btns-upload-gif {
     display: none;
 }
 
-.repeat{
+.repeat {
     background: #FFF4FD;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     margin-right: 10px;
 }
 
-.upload{
+.upload {
     background: #F7C9F3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.push {
+    margin-left: auto;
 }
 
 .confirm:hover {
@@ -131,9 +135,56 @@
     z-index: -1;
 }
 
+.buffer-bar {
+    display: flex;
+    padding: 0 20px;
+    align-self: center;
+}
+
+.forward {
+    padding: 5px 8px;
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.buffer {
+    margin: 0 3px;
+    padding: 3px;
+    background: #B4B4B4;
+    box-shadow: inset 2px 2px 0 0 #000000, inset -2px -2px 0 0 #FFFCFC;
+    align-self: center;
+    display: flex;
+}
+
+.buffer-bar-item {
+    width: 15px;
+    height: 16px;
+    background: #999999;
+}
+
+.buffer-bar-item:not(:last-child) {
+    border-right: 2px solid #B4B4B4;
+}
+
+.gif-preview-container {
+    display: none;
+}
+
+.gif-preview-container img {
+    width: 100%;
+    height: 50vh;
+}
+
+#timer {
+    display: none;
+    border: 1px solid red;
+    align-self: center;
+
+}
+
 .capture-btn {
     margin: 0 5px 5px 0;
-    float: right;
 }
 
 .capture-btn button {
@@ -146,10 +197,12 @@
     vertical-align: middle;
 }
 
+
+
 @media screen and (max-width: 768px) {
 
     .create-gif-section,
-    .video-recording{
+    .video-recording {
         max-width: 100%;
     }
 
@@ -164,11 +217,12 @@
         align-items: center;
     }
 
-    .cancel{
+    .cancel {
         display: none;
     }
 
-    .window-img,.subtitle-window{
+    .window-img,
+    .subtitle-window {
         padding: 4px 0;
         text-align: center;
     }

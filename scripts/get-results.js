@@ -44,7 +44,7 @@ function getSearchResults() {
                     saveBtnChild.className = 'save-gif';
                     saveBtnChild.id = gifID;
                     saveBtnChild.innerHTML = `<img title='Guardar Gifos' src='/gifOS/images/save-icon.png'>`;
-                    saveBtnChild.onclick = function () {
+                    saveBtnChild.onclick = function (e) {
                         fetch(`${APIurl}${this.id}?&api_key=${APIkey}`)
                             .then(response => {
                                 return response.json()
@@ -53,6 +53,7 @@ function getSearchResults() {
                                 localStorage.setItem(`gif-${this.id}`, JSON.stringify(data.data));
                             })
                         showLsItems();
+                        e.stopPropagation();
                     }
                     gifDiv.append(saveBtnChild);
 
