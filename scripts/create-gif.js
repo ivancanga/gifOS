@@ -47,7 +47,7 @@ function stopRecording() {
     document.getElementById("titleBox").innerHTML = "Vista Previa";
 
     // Aca van los add para la barra de buffer dinámica
-
+    animateProgressBar(buffer);
     // ****
 
     // Creamos el formulario para enviarlo por el body a giphy
@@ -118,14 +118,16 @@ function getDuration() {
 }
 
 // Anima la barra de subida, entender como funciona esto bien
-let counter = 0;
+let buffer = document.querySelectorAll(".buffer-bar-item");
+console.log(buffer.length);
 function animateProgressBar(bar) {
   setInterval(() => {
-    if (counter < bar.length) {
-      bar.item(counter).classList.toggle("progress-bar-item-active");
-      counter++;
-    } else {
-      counter = 0;
+
+    for (let i = 0; i < bar.length; i++) {
+      setTimeout(() => {
+        bar[i].classList.toggle("buffer-bar-item-active");
+      }, 500);
     }
+
   }, 200);
 }
