@@ -1,74 +1,76 @@
-body{
-    background-color: #110039;
+body {
+  background-color: #110039;
 }
 
-.top-bar{
-    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
-    box-shadow: 0 1px 0 0 #110038;
+.top-bar {
+  background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+  box-shadow: 0 1px 0 0 #110038;
 }
 
-.btn-header{
-    color: white;
-    background: #EE3EFE;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+.btn-header {
+  color: white;
+  background: #ee3efe;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 }
 
-.btn-header:hover,.choose-style:hover button{
-    background: #CF37DB;
+.btn-header:hover,
+.choose-style:hover button {
+  background: #cf37db;
 }
 
-#style-list p.sailor-night:hover{
-    background: #2E32FB;
+#style-list p.sailor-night:hover {
+  background: #2e32fb;
 }
 
-.url-header a{
-    color: #FFFFFF;
+.url-header a {
+  color: #ffffff;
 }
 
-.title-search-bar{
-    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+.title-search-bar {
+  background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 }
 
-.url-header a:hover{
-    border: 1px dotted white;
+.url-header a:hover {
+  border: 1px dotted white;
 }
 
-.dashed{
-    border-bottom: 1px solid white;
+.dashed {
+  border-bottom: 1px solid white;
 }
 
-.search-bar,.btn-search{
-    color: black;
-    background: #B4B4B4;
+.search-bar,
+.btn-search {
+  color: black;
+  background: #b4b4b4;
 }
 
-.search-bar{
-    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+.search-bar {
+  box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 }
 
-.title-section{
-    border: 1px solid #2E32FB;
-    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #110038;
+.title-section {
+  border: 1px solid #2e32fb;
+  box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #110038;
 }
 
-.title-gif{
-    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+.title-gif {
+  background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 }
 
-.gif:hover{
-    background: #B4B4B4;
-    box-shadow: inset -2px -2px 0 0 #8F8F8F, inset 2px 2px 0 0 #FFFFFF;
+.gif:hover {
+  background: #b4b4b4;
+  box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 }
 
-.gif-title-card{
-    border-bottom: 1px solid white;
-    color: white;
-    background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+.gif-title-card {
+  border-bottom: 1px solid white;
+  color: white;
+  background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 }
 
-.btn-gif{
-    background: #2E32FB;
-    border: 1px solid #4C2F99;
-    box-shadow: inset -2px -2px 0 0 #2124B3, inset 2px 2px 0 0 #FFFFFF;
+.btn-gif {
+  background: #2e32fb;
+  border: 1px solid #4c2f99;
+  box-shadow: inset -2px -2px 0 0 #2124b3, inset 2px 2px 0 0 #ffffff;
 }

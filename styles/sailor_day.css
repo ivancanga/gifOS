@@ -1,58 +1,61 @@
-body{
-    background-color: #FFF5FE;
+body {
+  background-color: #fff5fe;
 }
 
-.top-bar{
-    background-image: linear-gradient(to right, #4180F6, #F7C9F3);
+.top-bar {
+  background-image: linear-gradient(to right, #4180f6, #f7c9f3);
 }
 
-.btn-header{
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+.btn-header {
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
 
-.btn-header:hover,.choose-style:hover button, .search-input:focus ~ .btn-search:hover{
-    background: #E6BCE2;
+.btn-header:hover,
+.choose-style:hover button,
+.search-input:focus ~ .btn-search:hover {
+  background: #e6bce2;
 }
 
-.search-input:focus ~ .btn-search, .btn-search:focus{
-    color: black;
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+.search-input:focus ~ .btn-search,
+.btn-search:focus {
+  color: black;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
 
-.title-search-bar{
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+.title-search-bar {
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
 }
 
-.dashed{
-    border-bottom: 1px solid black;
+.dashed {
+  border-bottom: 1px solid black;
 }
 
-.title-section{
-    border: 1px solid #E6BBE2;
-    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+.title-section {
+  border: 1px solid #e6bbe2;
+  box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
 }
 
-.title-gif{
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+.title-gif {
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
 }
 
-.gif:hover{
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+.gif:hover {
+  background: #e6e6e6;
+  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
-.gif-title-card{
-    border-bottom: 1px solid white;
-    color: white;
-    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+.gif-title-card {
+  border-bottom: 1px solid white;
+  color: white;
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
 }
 
-.btn-gif{
-    background: #3A72DB;
-    border: 1px solid #4C2F99;
-    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+.btn-gif {
+  background: #3a72db;
+  border: 1px solid #4c2f99;
+  box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
 }
