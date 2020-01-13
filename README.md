@@ -11,9 +11,14 @@ La app tiene diferentes funcionalidades, todas basadas en la obtención y envío
   - Posibilidad de hacerle click e ir a la url de Giphy con más información.
 
 - **Sugeridos** sección que muestra 4 resultados sugeridos randoms (desktop version) y 1 resultado sugerido (mobile version) a partir de un array con 10 valores.
+
 - **Trendings**: sección que muestra los trendings del momento, para desktop, toma span 2 si el ancho del gif es wide. 
+
 - **Creador de Gif**: Con la implementación de la librería **RecordRTC**, podemos grabar un video desde nuestra webcam y subirlo al servidor de Giphy (**http POST request**).
-- **Mis Guifos**: Obtendremos un listado de todos los gifs que guardamos u hayamos creado. Para acceder siempre desde el navegador. Los gifs se guardan en el **LocalStorage**, con el value del **JSON string**. 
+
+- **Mis Guifos**: Obtendremos un listado de todos los gifs que guardamos u hayamos creado. Para acceder siempre desde el navegador. Los gifs se guardan en el **LocalStorage**, con el value del **JSON string**.
+
+- **Elegir tema**: conmuta un tema light/dark y lo guarda en caché para usarlo sin perderlo en toda la navegación del sitio. 
 
 #### Live demo
 
