@@ -163,6 +163,10 @@
     background: #999999;
 }
 
+.buffer-bar-item-active{
+    background: #F7C9F3;
+}
+
 .buffer-bar-item:not(:last-child) {
     border-right: 2px solid #B4B4B4;
 }
