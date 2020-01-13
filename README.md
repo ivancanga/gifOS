@@ -6,8 +6,6 @@ La app tiene diferentes funcionalidades, todas basadas en la obtención y envío
 
 ![desktop_version](https://ivancanga.github.io/gifOS/images/readme/desktop-version.png)
 
-![mobile_version](https://ivancanga.github.io/gifOS/images/readme/mobile-version.png)
-
 - **Buscador de Gif** con resultados sugeridos, que trae (**http GET request**) y renderiza en pantalla una grilla estilada (CSS) con Grid las gifcards con la info de cada gif.
   - Imágen gif.
   - Título simulando hashtags del gif.
