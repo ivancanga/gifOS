@@ -1,4 +1,4 @@
-# GifOS ![globe_img](https://ivancanga.github.io/gifOS\images\globe_img.png)
+# GifOS ![globe_img](https://ivancanga.github.io/gifOS/images/globe_img.png)
 
 El proyecto GifOS consiste en la realización total de una web app (mobile/desktop), maquetado, estilado y funcionalidad a partir de un hi-fi mockup hecho por un UX/UI designer de Acámica (bootcamp TI). 
 
