@@ -2,7 +2,9 @@
 
 El proyecto GifOS consiste en la realización total de una web app (mobile/desktop), maquetado, estilado y funcionalidad a partir de un hi-fi mockup hecho por un UX/UI designer de Acámica (bootcamp TI). 
 
-La app tiene diferentes funcionalidades, todas basadas en la obtención y envío de Gifs hechas a la APIrest de Giphy. 
+La app tiene diferentes funcionalidades, todas basadas en la obtención y envío de Gifs hechas a la APIrest de Giphy.
+
+![desktop_version](https://ivancanga.github.io/gifOS/images/readme/desktop-version.png)
 
 - **Buscador de Gif** con resultados sugeridos, que trae (**http GET request**) y renderiza en pantalla una grilla estilada (CSS) con Grid las gifcards con la info de cada gif.
   - Imágen gif.
