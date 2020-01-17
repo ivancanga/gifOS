@@ -19,8 +19,8 @@ function getSearchResults() {
         gifDiv = document.createElement("div");
         gifDiv.className = "gif";
         innerGifs.appendChild(gifDiv);
-
         imgChild = document.createElement("img");
+        imgChild.className = 'img-gif';
         imgChild.src = imgURL;
         titleDiv = document.createElement("div");
         titleDiv.className = "title-gif";

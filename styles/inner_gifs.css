@@ -17,6 +17,13 @@
     grid-column: span 2 / auto;
 }
 
+.img-gif{
+    background-color: rgba(128, 128, 128, 0.082);
+    background-image: url(https://win98icons.alexmeub.com/icons/png/application_hourglass-0.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .gif img{
     width: 100%;
     height: 100%;
