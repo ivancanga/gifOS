@@ -20,7 +20,6 @@ function startRecording() {
     type: "gif",
     frameRate: 1,
     quality: 10,
-    width: 720,
     onGifRecordingStarted: function () {
       console.log("started");
     }
