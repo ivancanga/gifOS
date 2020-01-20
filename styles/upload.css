@@ -81,6 +81,7 @@
     background: #F7C9F3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    margin-bottom: 12px;
 }
 
 .stop {
@@ -89,6 +90,7 @@
     background: #FF6161;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+    margin-bottom: 12px;
 }
 
 .btns-upload-gif {
@@ -122,7 +124,7 @@
 }
 
 .video-container {
-    padding: 0 4px;
+    padding: 2px 10px;
 }
 
 #videoElement {
@@ -164,7 +166,7 @@
     background: #999999;
 }
 
-.buffer-bar-item-active{
+.buffer-bar-item-active {
     background: #F7C9F3;
 }
 
@@ -183,17 +185,24 @@
 
 #timer {
     display: none;
-    border: 1px solid red;
     align-self: center;
-
+    background-color: white;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    padding: 8px;
+    float: left;
+    margin-left: 4px;
 }
 
 .capture-btn {
     margin: 0 5px 5px 0;
+    padding: 5px 5px;
+
 }
 
 .capture-btn button {
     width: fit-content;
+    float: right;
 }
 
 .btn-camera,
@@ -203,6 +212,92 @@
 }
 
 
+.uploading-gif {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    text-align: center;
+    height: 300px;
+}
+
+.uploading-gif img {
+    margin-top: 80px;
+    width: 30px;
+    height: auto;
+}
+
+.uploading-gif-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bolder;
+    color: #110038;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+}
+
+.uploading-gif .buffer {
+    margin: 0 auto;
+    width: 40%;
+    margin-top: 25px;
+}
+
+.uploading-gif .time-left {
+    color: rgba(17, 0, 56, 0.64);
+    font-size: 0.7rem;
+}
+
+.alert-gif {
+    width: 700px;
+    height: fit-content;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #E6E6E6;
+    border: 1px solid white;
+}
+
+.alert-gif .title-modal {
+    font-size: 0.9rem;
+    font-weight: bolder;
+    padding: 2px 5px;
+    color: white;
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    
+}
+
+.alert-gif .content-modal {
+    display: flex;
+}
+
+.alert-gif .gif-modal-btns {
+    margin: 0 auto;
+    width: 35%;
+    align-self: center;
+}
+
+.alert-gif .gif-modal-btns button {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background: #FFF4FD;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.alert-gif .gif-modal {
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    width: 60%;
+    height: 200px;
+    margin: 8px;
+    padding: 2px;
+}
 
 @media screen and (max-width: 768px) {
 

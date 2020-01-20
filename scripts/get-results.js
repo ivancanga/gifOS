@@ -193,17 +193,3 @@ function trendingGifs() {
       }
     });
 }
-
-// Display Gifs (se ejecuta sola), igual esto lo tenes que poner en otro script, porque el html de my gifos esta cargando scripts que nunca va a correr.
-
-(function displayGifs() {
-  for (let i = 0; i < localStorage.length; i++) {
-    if (localStorage.key(i) !== "theme" && localStorage !== null) {
-      gifID = localStorage.getItem(localStorage.key(i));
-      gif = document.createElement("img");
-      gif.id = gifID;
-      gif.src = `https://media2.giphy.com/media/${gifID}/giphy.gif`;
-      document.getElementById("mygifos").appendChild(gif);
-    }
-  }
-})();

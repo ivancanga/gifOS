@@ -1,4 +1,5 @@
-var video = document.querySelector("#videoElement");
+let video = document.querySelector("#videoElement");
+let buffer = document.querySelectorAll(".buffer-bar-item");
 
 // Para timer de gif
 let recording = false;
@@ -20,7 +21,7 @@ function startRecording() {
     frameRate: 1,
     quality: 10,
     width: 720,
-    onGifRecordingStarted: function() {
+    onGifRecordingStarted: function () {
       console.log("started");
     }
   });
@@ -34,10 +35,10 @@ function startRecording() {
 }
 
 function stopRecording() {
-  video.srcObject.getTracks().forEach(function(track) {
+  video.srcObject.getTracks().forEach(function (track) {
     track.stop();
   });
-  recorder.stopRecording(function() {
+  recorder.stopRecording(function () {
     recording = false;
     // Se oculta video y muestra el preview del gif
     video.style.display = "none";
@@ -64,6 +65,42 @@ function stopRecording() {
 }
 
 function uploadGif(gif) {
+  animateProgressBar(buffer);
+  document.querySelector('.gif-preview-container').innerHTML = `
+  <div class='uploading-gif'>
+    <img src="/gifOS/images/globe_img.png">
+    <p class='uploading-gif-title'>Estamos subiendo tu guifo...<p>
+    <div class="buffer">
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+      <div class="buffer-bar-item"></div>
+    </div>
+    <p class='time-left'>Tiempo restante: <span style='text-decoration: line-through'>38 años</span> algunos segundos</p>
+  </div>
+  `;
+  document.querySelector('.btns-upload-gif').innerHTML = `
+  <button class="btn-create-gif repeat push" onclick="location.href='upload.html'"><span>Cancelar</span></button>
+  `
+
   fetch(
     "https://upload.giphy.com/v1/gifs?api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx",
     {
@@ -72,11 +109,15 @@ function uploadGif(gif) {
     }
   )
     .then(response => {
-      console.log(response.status);
-      return response.json();
+      if (response.status === 200) {
+        console.log('Gif subido!');
+        return response.json();
+      } else {
+        console.log('error.');
+      }
     })
     .then(data => {
-      console.log("Gif subido!");
+      console.log(data);
       fetch(
         `https://api.giphy.com/v1/gifs/${data.data.id}?&api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx`
       )
@@ -85,9 +126,28 @@ function uploadGif(gif) {
         })
         .then(data => {
           localStorage.setItem(
-            `gif-${data.data.id}`,
+            `mygif-${data.data.id}`,
             JSON.stringify(data.data)
           );
+          let alertGif = document.createElement('div');
+          alertGif.className = 'alert-gif';
+          alertGif.innerHTML = `
+          <p class='title-modal'> Guifo subido con éxito! <span style='float: right'><img id='closeModal' src="/gifOS/images/close.svg"></span></p>
+          <div class='content-modal'>
+            <img class='gif-modal' src='${data.data.images.original.url}'>
+            <div class='gif-modal-btns'>
+              <button>Copiar Enlace Guifo</button>
+              <button>Descargar Guifo</button>
+            </div>
+          <div>
+          `;
+          document.querySelector('.content').style.filter = 'grayscale(70%) blur(2px)';
+          document.querySelector('.top-bar').style.filter = 'grayscale(70%) blur(2px)';
+          document.body.append(alertGif);
+          document.getElementById('closeModal').addEventListener('click', () => {
+            document.querySelector('.alert-gif').style.display = 'none';
+            window.location.href = "../gifOS/my-gifos.html";
+          });
         });
     });
 }
@@ -118,8 +178,6 @@ function getDuration() {
 }
 
 // Anima la barra de subida, entender como funciona esto bien
-let buffer = document.querySelectorAll(".buffer-bar-item");
-console.log(buffer.length);
 function animateProgressBar(bar) {
   setInterval(() => {
 
@@ -131,3 +189,4 @@ function animateProgressBar(bar) {
 
   }, 200);
 }
+
