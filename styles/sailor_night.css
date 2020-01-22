@@ -63,7 +63,7 @@ body {
   box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 }
 
-.gif-title-card {
+#gif_suggested .gif-title {
   border-bottom: 1px solid white;
   color: white;
   background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);

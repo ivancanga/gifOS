@@ -102,7 +102,7 @@ function clearResults() {
   document.querySelector(".search-results").style.display = "none";
 }
 
-// Random gifs, (refactorizar ese then data)
+// Random gifs
 
 function suggestedGifs(gif) {
   fetch(`${APIurl}search?q=${gif}&api_key=${APIkey}&limit=1`)
@@ -110,19 +110,25 @@ function suggestedGifs(gif) {
       return response.json();
     })
     .then(data => {
-      $("#gif_suggested").append(
-        "<div class='gif-box'><section class='gif-title-card'><p>#" +
-          gif +
-          "</p><img src='/gifOS/images/button3.svg' /></section><img class='gif-img' src=' " +
-          data.data[0].images.original.url +
-          " ' /><span class='btn-gif'><a href=' " +
-          data.data[0].bitly_url +
-          "' target='_blank'>Ver más...</span><a></div>"
-      );
+      console.log(data.data[0].images.original.url);
+      let gif_box = document.createElement('div');
+      gif_box.className = 'gif-box';
+      gif_box.innerHTML = `
+        <div class='gif-title'>
+          <span>#${gif}</span><span style='float: right;'><img src='/gifOS/images/button3.svg' /></span>
+        </div>
+        <div class='gif-img'>
+          <img src='${data.data[0].images.original.url}'>
+          <span class='btn-gif'><a href='${data.data[0].bitly_url}' target='_blank'>Ver más...</a></span>
+        </div>
+      `
+      document.getElementById('gif_suggested').append(gif_box);
     });
 }
 
 let myArray = [
+  "Dugtrio",
+  "Celebi",
   "SakuraCardCaptor",
   "SailorMoon",
   "Togepi",

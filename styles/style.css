@@ -70,7 +70,7 @@ input {
   border: 1px dotted black;
 }
 
-.btn-header + .dropdown {
+.btn-header+.dropdown {
   width: 36px;
   height: 36px;
   margin-left: -5px;
@@ -228,8 +228,8 @@ input {
   background: #fffafe;
 }
 
-#gif_suggested div .gif-img:hover,
-.gif-box span:hover {
+#gif_suggested .gif-img:hover,
+#gif_suggested .btn-gif:hover {
   border: 1px dotted #110038;
 }
 
@@ -239,45 +239,41 @@ input {
 
 #gif_suggested {
   display: grid;
-  grid-template-columns: repeat(4, 24.2%);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 10px;
   justify-content: center;
 }
 
-#gif_suggested div {
-  /* margin: 0 8px; */
-  padding: 3px;
-  /* max-width: auto;
-    height: auto; */
-}
-
-#gif_suggested div .gif-img {
-  position: relative;
+#gif_suggested .gif-box {
+  padding: 4px;
   width: 100%;
-  height: 270px;
-  border: 1px solid transparent;
-}
-
-.gif-box {
   position: relative;
   background: #e6e6e6;
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
-.gif-box p {
+#gif_suggested .gif-title {
+  padding: 3px 4px;
+  font-family: "Chakra Petch", sans-serif;
   font-weight: bold;
-  line-height: 1.2rem;
-  font-size: 0.9rem;
-  padding: 2px 4px;
+  font-size: 0.8rem;
 }
 
-.gif-title-card {
-  padding: 0 3px;
-  display: flex;
-  justify-content: space-between;
+#gif_suggested .gif-img{
+  height: 280px;
 }
 
-.btn-gif {
+#gif_suggested .gif-img img {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.082);
+  background-image: url(https://win98icons.alexmeub.com/icons/png/application_hourglass-0.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#gif_suggested .btn-gif {
   position: absolute;
   top: 272px;
   left: 55px;
@@ -286,7 +282,7 @@ input {
   padding: 8px 12px;
 }
 
-.gif-box a {
+#gif_suggested .gif-box a {
   color: white;
   text-decoration: none;
 }
