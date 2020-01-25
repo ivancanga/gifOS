@@ -31,9 +31,15 @@ function changeLupa() {
 }
 
 function showLsItems() {
-  if (localStorage.length > 1) {
-    document.getElementById("gif-count").innerHTML = `(${localStorage.length -
-      1})`;
+  let c = 0;
+  for (let i = 0; i < localStorage.length; i++) {
+    if (
+      localStorage.key(i).startsWith("mygif-") ||
+      localStorage.key(i).startsWith("gif-")
+    ) {
+      c++;
+    }
+    document.getElementById("gif-count").innerHTML = `(${c})`;
   }
 }
 
@@ -47,6 +53,15 @@ function setThemeLS() {
 }
 
 window.onload = function() {
+  document.querySelector(".content").style.filter = "grayscale(70%) blur(7px)";
+  document.querySelector(".top-bar").style.filter = "grayscale(70%) blur(7px)";
+
+  setTimeout(() => {
+    document.querySelector(".content").style.filter = "none";
+    document.querySelector(".top-bar").style.filter = "none";
+    document.querySelector(".loading-page").style.display = "none";
+  }, 2500);
+
   // Si alguna vez se predefinió el tema oscuro, permanece el tema por el value en LS
   if (localStorage.getItem("theme") == 2) {
     document.getElementById("theme").href = "/gifOS/styles/sailor_night.css";

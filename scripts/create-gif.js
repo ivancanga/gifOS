@@ -64,43 +64,39 @@ function stopRecording() {
 }
 
 function uploadGif(gif) {
-  animateProgressBar(buffer);
   document.querySelector('.gif-preview-container').innerHTML = `
   <div class='uploading-gif'>
     <img src="/gifOS/images/globe_img.png">
     <p class='uploading-gif-title'>Estamos subiendo tu guifo...<p>
-    <div class="buffer">
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
-      <div class="buffer-bar-item"></div>
+    <div class="progress-bar" id="progress-bar">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
     <p class='time-left'>Tiempo restante: <span style='text-decoration: line-through'>38 años</span> algunos segundos</p>
   </div>
   `;
+  animateProgressBar();
   document.querySelector('.btns-upload-gif').innerHTML = `
   <button class="btn-create-gif repeat push" onclick="location.href='upload.html'"><span>Cancelar</span></button>
   `
 
-  fetch(
+  /* fetch(
     "https://upload.giphy.com/v1/gifs?api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx",
     {
       method: "POST",
@@ -148,7 +144,7 @@ function uploadGif(gif) {
             window.location.href = "../gifOS/my-gifos.html";
           });
         });
-    });
+    }); */
 }
 
 // Entender como funciona esto bien
@@ -176,16 +172,15 @@ function getDuration() {
   }, 1000);
 }
 
-// Anima la barra de subida, entender como funciona esto bien
-function animateProgressBar(bar) {
-  setInterval(() => {
-
-    for (let i = 0; i < bar.length; i++) {
-      setTimeout(() => {
-        bar[i].classList.toggle("buffer-bar-item-active");
-      }, 500);
+// Anima la barra de subida
+function animateProgressBar() {
+  var i = 0;
+  setInterval(function() {
+    $('#progress-bar ul li:nth-of-type(' + i + ')').css('display', 'inline-block');
+    i++;
+    if (i > 17) {
+      $('#progress-bar ul li').css('display', 'none');
+      i = 0;
     }
-
-  }, 200);
-}
-
+  }, 50);
+};

@@ -110,7 +110,6 @@ function suggestedGifs(gif) {
       return response.json();
     })
     .then(data => {
-      console.log(data.data[0].images.original.url);
       let gif_box = document.createElement('div');
       gif_box.className = 'gif-box';
       gif_box.innerHTML = `
