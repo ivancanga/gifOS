@@ -20,7 +20,7 @@ function getSearchResults() {
         gifDiv.className = "gif";
         innerGifs.appendChild(gifDiv);
         imgChild = document.createElement("img");
-        imgChild.className = 'img-gif';
+        imgChild.className = "img-gif";
         imgChild.src = imgURL;
         titleDiv = document.createElement("div");
         titleDiv.className = "title-gif";
@@ -50,6 +50,7 @@ function getSearchResults() {
             .then(data => {
               localStorage.setItem(`gif-${this.id}`, JSON.stringify(data.data));
             });
+          displayPopup('Gif guardado!');
           showLsItems();
           e.stopPropagation();
         };
@@ -63,6 +64,18 @@ function getSearchResults() {
       return error;
     });
   return found;
+}
+
+// Crea popup
+
+function displayPopup(text){
+  let popUp = document.createElement("div");
+  popUp.className = "popup";
+  popUp.innerHTML = text;
+  document.body.appendChild(popUp);
+  setTimeout(() => {
+    document.body.removeChild(popUp);
+  }, 1200);
 }
 
 // Autocompletar
@@ -110,8 +123,8 @@ function suggestedGifs(gif) {
       return response.json();
     })
     .then(data => {
-      let gif_box = document.createElement('div');
-      gif_box.className = 'gif-box';
+      let gif_box = document.createElement("div");
+      gif_box.className = "gif-box";
       gif_box.innerHTML = `
         <div class='gif-title'>
           <span>#${gif}</span><span style='float: right;'><img src='/gifOS/images/button3.svg' /></span>
@@ -120,8 +133,8 @@ function suggestedGifs(gif) {
           <img src='${data.data[0].images.original.url}'>
           <span class='btn-gif'><a href='${data.data[0].bitly_url}' target='_blank'>Ver más...</a></span>
         </div>
-      `
-      document.getElementById('gif_suggested').append(gif_box);
+      `;
+      document.getElementById("gif_suggested").append(gif_box);
     });
 }
 
@@ -180,7 +193,7 @@ function trendingGifs() {
         squareCheck = width / height;
         imgURL = data.data[i].images.original.url;
         $("#giftrending").append(
-          `<div class='gif'><img src='${imgURL}' /><div class='title-gif' id='trend-gif-${i +
+          `<div class='gif'><img class='img-gif' src='${imgURL}' /><div class='title-gif' id='trend-gif-${i +
             1}'></div></div>`
         );
         titulo_gif = data.data[i].title.trim().split(" ");

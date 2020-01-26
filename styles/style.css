@@ -8,11 +8,11 @@ body {
   font-family: "Chakra Petch", sans-serif;
 }
 
-.loading-page{
+.loading-page {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 250px;
   padding: 10px;
   background-color: blue;
@@ -81,7 +81,7 @@ input {
   border: 1px dotted black;
 }
 
-.btn-header+.dropdown {
+.btn-header + .dropdown {
   width: 36px;
   height: 36px;
   margin-left: -5px;
@@ -271,7 +271,7 @@ input {
   font-size: 0.8rem;
 }
 
-#gif_suggested .gif-img{
+#gif_suggested .gif-img {
   height: 280px;
 }
 
@@ -311,6 +311,17 @@ input {
   float: right;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.popup{
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #b4b4b4;
+  padding: 10px;
+  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
 @media screen and (max-width: 768px) {

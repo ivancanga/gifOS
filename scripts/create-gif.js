@@ -46,10 +46,6 @@ function stopRecording() {
     preview.src = URL.createObjectURL(recorder.getBlob());
     document.getElementById("titleBox").innerHTML = "Vista Previa";
 
-    // Aca van los add para la barra de buffer dinámica
-    animateProgressBar(buffer);
-    // ****
-
     // Creamos el formulario para enviarlo por el body a giphy
     let form = new FormData();
     form.append("file", recorder.getBlob(), "myGif.gif");
@@ -95,8 +91,8 @@ function uploadGif(gif) {
   document.querySelector('.btns-upload-gif').innerHTML = `
   <button class="btn-create-gif repeat push" onclick="location.href='upload.html'"><span>Cancelar</span></button>
   `
-
-  /* fetch(
+  
+  fetch(
     "https://upload.giphy.com/v1/gifs?api_key=xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx",
     {
       method: "POST",
@@ -144,7 +140,7 @@ function uploadGif(gif) {
             window.location.href = "../gifOS/my-gifos.html";
           });
         });
-    }); */
+    });
 }
 
 // Entender como funciona esto bien
@@ -174,13 +170,16 @@ function getDuration() {
 
 // Anima la barra de subida
 function animateProgressBar() {
-  var i = 0;
+  document.querySelector('.progress-bar').style.display = 'inline-block';
+  let liCounter = 0;
   setInterval(function() {
-    $('#progress-bar ul li:nth-of-type(' + i + ')').css('display', 'inline-block');
-    i++;
-    if (i > 17) {
+    $('#progress-bar ul li:nth-of-type(' + liCounter + ')').css('display', 'inline-block');
+    console.log(liCounter);
+    if (liCounter > 17) {
       $('#progress-bar ul li').css('display', 'none');
-      i = 0;
+      liCounter = 1;
+    }else{
+      liCounter++;
     }
-  }, 50);
+  }, 400);
 };

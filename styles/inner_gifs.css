@@ -1,82 +1,82 @@
-#inner_gifs,#giftrending{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, auto);
-    grid-auto-flow: dense;
+#inner_gifs,
+#giftrending {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-auto-flow: dense;
 }
 
-.gif{
-    padding: 4px;
-    height: 100%;
-    height: 300px;
-    width: 100%;
-    position: relative;
+.gif {
+  padding: 4px;
+  height: 100%;
+  height: 300px;
+  width: 100%;
+  position: relative;
+  background-image: url(https://win98icons.alexmeub.com/icons/png/application_hourglass-0.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.double-span{
-    grid-column: span 2 / auto;
+.double-span {
+  grid-column: span 2 / auto;
 }
 
-.img-gif{
-    background-color: rgba(128, 128, 128, 0.082);
-    background-image: url(https://win98icons.alexmeub.com/icons/png/application_hourglass-0.png);
-    background-repeat: no-repeat;
-    background-position: center;
+.img-gif {
+  background-color: rgba(128, 128, 128, 0.082);
 }
 
-.gif img{
-    width: 100%;
-    height: 100%;
-    border: 1px solid transparent;
+.gif img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
 }
 
-.gif img:hover{
-    border: 1px dotted #110038;
+.gif img:hover {
+  border: 1px dotted #110038;
 }
 
-.title-gif{
-    display: none;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: bolder;
-    transform: translate(0%, -125%);
-    margin: 1px;
-    line-height: 1.6rem;
+.title-gif {
+  display: none;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  transform: translate(0%, -125%);
+  margin: 1px;
+  line-height: 1.6rem;
 }
 
-.save-gif{
-    display: none;
-    position: absolute;
-    top: 90%;
-    left: 80%;
-    transform: translate(0%, -50%);
-    cursor: pointer;
+.save-gif {
+  display: none;
+  position: absolute;
+  top: 90%;
+  left: 80%;
+  transform: translate(0%, -50%);
+  cursor: pointer;
 }
 
 .gif:hover .save-gif,
-.gif:hover .title-gif{
-    display: block;
+.gif:hover .title-gif {
+  display: block;
 }
 
-.save-gif img:hover{
-    border: 1px solid transparent;
-    border-bottom: 2px solid rgba(51, 51, 51, 0.178);
+.save-gif img:hover {
+  border: 1px solid transparent;
+  border-bottom: 2px solid rgba(51, 51, 51, 0.178);
 }
 
-.title-gif span{
-    padding: 1px 3px;
+.title-gif span {
+  padding: 1px 3px;
 }
 
 @media screen and (max-width: 768px) {
+  #inner_gifs,
+  #giftrending {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+  }
 
-    #inner_gifs,#giftrending{
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: auto;
-        grid-auto-flow: row;
-    }
-
-    .gif{
-        height: 300px;
-    }
-
-} 
+  .gif {
+    height: 300px;
+  }
+}

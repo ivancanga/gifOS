@@ -53,6 +53,7 @@ function setThemeLS() {
 }
 
 window.onload = function() {
+
   document.querySelector(".content").style.filter = "grayscale(70%) blur(7px)";
   document.querySelector(".top-bar").style.filter = "grayscale(70%) blur(7px)";
 
@@ -60,7 +61,7 @@ window.onload = function() {
     document.querySelector(".content").style.filter = "none";
     document.querySelector(".top-bar").style.filter = "none";
     document.querySelector(".loading-page").style.display = "none";
-  }, 2500);
+  }, 100);
 
   // Si alguna vez se predefinió el tema oscuro, permanece el tema por el value en LS
   if (localStorage.getItem("theme") == 2) {
