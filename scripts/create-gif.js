@@ -1,17 +1,24 @@
-let video = document.querySelector("#videoElement");
+let video = document.querySelector("#video");
 let buffer = document.querySelectorAll(".buffer-bar-item");
 
 // Para timer de gif
 let recording = false;
 
-async function getStream() {
+function getStream() {
   $(".create-gif-section").css("display", "none");
   $(".video-recording").css("display", "block");
-  let stream = await navigator.mediaDevices.getUserMedia({
-    audio: false,
-    video: true
+  const constraints = {
+    video: true,
+    audio: false
+  };
+  navigator.mediaDevices
+  .getUserMedia(constraints)
+  .then(stream => {
+    video.srcObject = stream;
+  })
+  .catch(error => {
+    console.error(error);
   });
-  video.srcObject = stream;
 }
 
 function startRecording() {
