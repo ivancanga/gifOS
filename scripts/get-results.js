@@ -37,7 +37,6 @@ function getSearchResults() {
             document.getElementById(`gif-${i + 1}`).appendChild(spanChild);
           }
         }
-
         saveBtnChild = document.createElement("p");
         saveBtnChild.className = "save-gif";
         saveBtnChild.id = gifID;
@@ -49,9 +48,9 @@ function getSearchResults() {
             })
             .then(data => {
               localStorage.setItem(`gif-${this.id}`, JSON.stringify(data.data));
+              showLsItems();
             });
-          displayPopup('Gif guardado!');
-          showLsItems();
+          displayPopup("Gif guardado!");
           e.stopPropagation();
         };
         gifDiv.append(saveBtnChild);
@@ -68,7 +67,7 @@ function getSearchResults() {
 
 // Crea popup
 
-function displayPopup(text){
+function displayPopup(text) {
   let popUp = document.createElement("div");
   popUp.className = "popup";
   popUp.innerHTML = text;
@@ -76,6 +75,7 @@ function displayPopup(text){
   setTimeout(() => {
     document.body.removeChild(popUp);
   }, 1200);
+
 }
 
 // Autocompletar
