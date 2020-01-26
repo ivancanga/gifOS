@@ -58,6 +58,7 @@ function getSearchResults() {
       document.querySelector(".autocomplete-content").style.display = "none";
       document.querySelector(".suggested").style.display = "none";
       document.querySelector(".trendings").style.display = "none";
+      displayModal();
     })
     .catch(error => {
       return error;
@@ -75,7 +76,6 @@ function displayPopup(text) {
   setTimeout(() => {
     document.body.removeChild(popUp);
   }, 1200);
-
 }
 
 // Autocompletar
@@ -209,5 +209,6 @@ function trendingGifs() {
             .classList.add("double-span");
         }
       }
+      displayModal();
     });
 }

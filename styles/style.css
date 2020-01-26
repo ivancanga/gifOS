@@ -324,6 +324,44 @@ input {
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
+.modal-div{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 40%;
+  background-color: #fff5fe;
+  padding: 20px;
+}
+
+.modal-gif-img{
+  border: 1px solid black;
+  padding: 5px;
+  width: 100%;
+  max-height: 400px;
+}
+
+.social-media{
+  width: fit-content;
+}
+
+.social-media p{
+  font-size: 0.9rem;
+  font-weight: bolder;
+  cursor: pointer;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  margin: 5px 0;
+  padding-right: 8px;
+}
+
+.social-media img{
+  margin: 5px 10px;
+  vertical-align: middle;
+  width: 25px;
+}
+
 @media screen and (max-width: 768px) {
   .content {
     margin: 40px 10px;
