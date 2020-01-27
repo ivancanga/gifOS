@@ -183,7 +183,6 @@ input {
 .search-input {
   width: 100%;
   margin-right: 10px;
-  line-height: 3rem;
   background: #ffffff;
   border: 1px solid #979797;
   box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
@@ -313,39 +312,50 @@ input {
   cursor: pointer;
 }
 
-.popup{
+.popup {
   text-align: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: #b4b4b4;
   padding: 10px;
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 }
 
-.modal-div{
+.modal-div {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 40%;
   background-color: #fff5fe;
-  padding: 20px;
+  -webkit-box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.75);
 }
 
-.modal-gif-img{
-  border: 1px solid black;
-  padding: 5px;
+.modal-div .gif-title{
+  padding: 4px;
+}
+
+.modal-div .gif-title img{
+  cursor: pointer;
+  width: 20px;
+  margin-top: 2px;
+}
+
+.modal-gif-img {
   width: 100%;
   max-height: 400px;
 }
 
-.social-media{
+.social-media {
+  padding: 0 5px;
   width: fit-content;
 }
 
-.social-media p{
+.social-media p {
   font-size: 0.9rem;
   font-weight: bolder;
   cursor: pointer;
@@ -356,7 +366,7 @@ input {
   padding-right: 8px;
 }
 
-.social-media img{
+.social-media img {
   margin: 5px 10px;
   vertical-align: middle;
   width: 25px;
@@ -398,7 +408,14 @@ input {
   }
 
   .url-header {
-    display: none;
+    display: block;
+    margin: 10px 0;
+    padding: 1px;
+    text-align: center;
+  }
+
+  .url-header a{
+    display: block;
   }
 
   .search-content {
@@ -425,18 +442,17 @@ input {
     justify-content: center;
   }
 
-  /*     #gif_suggested:nth-child(-n+3) {
-        border: 1px solid red;
-    } */
-
   #gif_suggested div {
-    margin: 10px auto;
-    padding: 3px;
     max-width: 100%;
     height: auto;
   }
 
   .clear-results {
     display: none;
+  }
+
+  .modal-div{
+    width: 90%;
+    height: auto;
   }
 }

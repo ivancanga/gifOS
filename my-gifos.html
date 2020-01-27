@@ -38,6 +38,16 @@
         </div>
     </div>
     <script src="/gifOS/scripts/displayLS-gifs.js"></script>
+    <script src="/gifOS/scripts/social-media.js"></script>
+    <script>
+        if (localStorage.getItem('theme') == 2) {
+            document.getElementById("theme").href = '/gifOS/styles/sailor_night.css';
+            document.getElementById("img-header").src = "/gifOS/images/gifOF_logo_dark.png";
+        }
+        window.onload = function() {
+            displayModal();
+        }
+    </script>
 </body>
 
 </html>

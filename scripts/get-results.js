@@ -187,11 +187,11 @@ function trendingGifs() {
       return response.json();
     })
     .then(data => {
-      for (let i = 0; i <= data.data.length; i++) {
-        height = data.data[i].images.original.height;
-        width = data.data[i].images.original.width;
-        squareCheck = width / height;
-        imgURL = data.data[i].images.original.url;
+      for (let i = 0; i < data.data.length; i++) {
+        let height = data.data[i].images.original.height;
+        let width = data.data[i].images.original.width;
+        let squareCheck = width / height;
+        let imgURL = data.data[i].images.original.url;
         $("#giftrending").append(
           `<div class='gif'><img class='img-gif' src='${imgURL}' /><div class='title-gif' id='trend-gif-${i +
             1}'></div></div>`

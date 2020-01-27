@@ -10,6 +10,7 @@ const savedGifos = document.getElementById("savedgifos");
         gif = document.createElement("img");
         gif.id = gifObj.id;
         gif.src = `${gifObj.images.original.url}`;
+        gif.className = 'img-gif';
         myGifos.appendChild(gif);
       }
       if (localStorage.key(i).startsWith('gif-')) {
@@ -17,10 +18,11 @@ const savedGifos = document.getElementById("savedgifos");
         gif = document.createElement("img");
         gif.id = gifObj.id;
         gif.src = `${gifObj.images.original.url}`;
+        gif.className = 'img-gif';
         savedGifos.appendChild(gif);
       }
     }
-    
+
     if(myGifos.innerHTML === ''){
       myGifos.innerHTML = 'Aun no creaste gifs';
     }
@@ -28,4 +30,3 @@ const savedGifos = document.getElementById("savedgifos");
       savedGifos.innerHTML = 'Aun no guardaste ningun gif';
     }
   })();
-
