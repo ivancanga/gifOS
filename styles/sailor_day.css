@@ -100,8 +100,14 @@ body {
 
 @media screen and (max-width: 768px) {
   .url-header {
-    background: #f7c9f3;
+    margin: 8px 0 13px 0;
+    padding: 4px;
+    background: #f7dff5;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  }
+  .url-header a:hover {
+    border: 1px dotted black;
+    background: #e9d8e8;
   }
 }

@@ -388,7 +388,16 @@
     height: auto;
   }
 
-  #savedgifos {
+  #savedgifos, #mygifos {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+
+  .buffer-bar{
+    display: none;
+  }
+
+  .alert-gif{
+    width: 90%;
   }
 }

@@ -107,6 +107,7 @@ input {
   background: #e6e6e6;
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   width: 100%;
+  z-index: 1;
 }
 
 #style-list p {
@@ -329,6 +330,7 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
+  max-height: fit-content;
   background-color: #fff5fe;
   -webkit-box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.75);
@@ -350,8 +352,14 @@ input {
   max-height: 400px;
 }
 
+.share-box-flex{
+  display: flex;
+}
+
 .social-media {
   padding: 0 5px;
+  margin-left: 4px;
+  margin-bottom: 10px;
   width: fit-content;
 }
 
@@ -366,10 +374,27 @@ input {
   padding-right: 8px;
 }
 
+.social-media p a{
+  color: black;
+  text-decoration: none;
+}
+
 .social-media img {
   margin: 5px 10px;
   vertical-align: middle;
   width: 25px;
+}
+
+.download-btn{
+  margin: 0 auto;
+  align-self: center;
+}
+
+.download-btn p{
+  padding: 25px;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
 
 @media screen and (max-width: 768px) {
