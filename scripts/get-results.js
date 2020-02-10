@@ -162,22 +162,19 @@ let rand = function() {
   }
   return myArraynew;
 };
-
 data = rand();
-if ($(window).width() < 500) {
-  $(document).ready(
-    suggestedGifs(data[Math.floor(Math.random() * data.length)])
-  );
+if (document.body.clientWidth < 500) {
+  window.onload = suggestedGifs(data[Math.floor(Math.random() * data.length)]);
 } else {
   for (let i = 0; i < data.length; i++) {
-    $(document).ready(suggestedGifs(data[i]));
+    window.onload = suggestedGifs(data[i]);
   }
 }
 
-// Trending gifs (refactorizar)
+// Trending gifs
 
 function trendingGifs() {
-  if ($(window).width() > 500) {
+  if (document.body.clientWidth > 500) {
     qtyRes = 24;
   } else {
     qtyRes = 6;
@@ -192,18 +189,21 @@ function trendingGifs() {
         let width = data.data[i].images.original.width;
         let squareCheck = width / height;
         let imgURL = data.data[i].images.original.url;
-        $("#giftrending").append(
-          `<div class='gif'><img class='img-gif' src='${imgURL}' /><div class='title-gif' id='trend-gif-${i +
-            1}'></div></div>`
-        );
+        let gifTrend = document.createElement('div');
+        gifTrend.className = 'gif';
+        gifTrend.innerHTML = `<img class='img-gif' src='${imgURL}' /><div class='title-gif' id='trend-gif-${i +
+          1}'></div>`
+        document.getElementById('giftrending').appendChild(gifTrend);
         titulo_gif = data.data[i].title.trim().split(" ");
         titulo_gif = titulo_gif.filter(del => del !== "GIF");
         for (var j = 0; j <= 3; j++) {
           if (titulo_gif[j] !== undefined && titulo_gif[j] !== "") {
-            $(`#trend-gif-${i + 1}`).append(`<span>#${titulo_gif[j]}</span>`);
+            let spanTituloGif = document.createElement('span');
+            spanTituloGif.innerHTML = `#${titulo_gif[j]}`;
+            document.getElementById(`trend-gif-${i + 1}`).appendChild(spanTituloGif);
           }
         }
-        if (squareCheck > 1.3 && $(window).width() > 500) {
+        if (squareCheck > 1.3 && document.body.clientWidth > 500) {
           document
             .querySelector(".gif:last-child")
             .classList.add("double-span");

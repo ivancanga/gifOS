@@ -66,20 +66,19 @@ window.onload = function() {
       "/gifOS/images/gifOF_logo_dark.png";
   }
 
-  $("#rnd").append(Math.floor(Math.random() * 10000000));
-
   trendingGifs();
   showLsItems();
   setThemeLS();
 
-  $(function() {
-    $(".search-bar input").keypress(function(e) {
+  (function() {
+    document.querySelector(".search-bar input").addEventListener('keypress',function(e) {
       if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
-        $(".btn-search").click();
+        document.querySelector(".btn-search").click();
         return false;
       } else {
         return true;
       }
     });
-  });
+  })();
+
 };

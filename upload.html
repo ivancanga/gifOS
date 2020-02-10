@@ -70,7 +70,7 @@
             </div>
 
             <div class="capture-btn">
-                <button class="btn-create-gif confirm" onclick="startRecording()"><img class="btn-camera"
+                <button id='startRecording' class="btn-create-gif confirm" onclick="startRecording()"><img class="btn-camera"
                         src="/gifOS/images/camera.svg" alt=""><span>Capturar</span></button>
                 <button class="btn-create-gif stop" onclick="stopRecording()"><img class="btn-camera"
                         src="/gifOS/images/recording.svg" alt=""><span>Listo</span></button>
@@ -111,13 +111,10 @@
         </div>
 
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
     <script src="/gifOS/scripts/create-gif.js"></script>
     <script src="/gifOS/scripts/displayLS-gifs.js"></script>
     <script src="/gifOS/scripts/social-media.js"></script>
-
     <script>
         if (localStorage.getItem('theme') == 2) {
             document.getElementById("theme").href = '/gifOS/styles/sailor_night.css';

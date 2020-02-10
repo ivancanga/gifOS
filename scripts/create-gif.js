@@ -5,8 +5,8 @@ let buffer = document.querySelectorAll(".buffer-bar-item");
 let recording = false;
 
 function getStream() {
-  $(".create-gif-section").css("display", "none");
-  $(".video-recording").css("display", "block");
+  document.querySelector(".create-gif-section").style.display = "none";
+  document.querySelector(".video-recording").style.display = "block";
   const constraints = {
     video: true,
     audio: false
@@ -36,8 +36,8 @@ function startRecording() {
   getDuration();
 
   document.getElementById("titleBox").innerHTML = "Capturando Tu Guifo";
-  $(".confirm").css("display", "none");
-  $(".stop").css("display", "block");
+  document.getElementById("startRecording").style.display = "none";
+  document.querySelector(".stop").style.display = "block";
 }
 
 function stopRecording() {
@@ -61,9 +61,8 @@ function stopRecording() {
       uploadGif(form);
     });
   });
-
-  $(".stop").css("display", "none");
-  $(".btns-upload-gif").css("display", "flex");
+  document.querySelector(".stop").style.display = "none";
+  document.querySelector(".btns-upload-gif").style.display = "flex";
 }
 
 function uploadGif(gif) {
@@ -150,7 +149,7 @@ function uploadGif(gif) {
     });
 }
 
-// Entender como funciona esto bien
+// Cronometro
 function getDuration() {
   let seconds = 0;
   let minutes = 0;
@@ -178,13 +177,15 @@ function getDuration() {
 // Anima la barra de subida
 function animateProgressBar() {
   document.querySelector('.progress-bar').style.display = 'inline-block';
+  let progressBar = document.getElementById('progress-bar');
   let liCounter = 0;
   setInterval(function() {
-    $('#progress-bar ul li:nth-of-type(' + liCounter + ')').css('display', 'inline-block');
-    console.log(liCounter);
-    if (liCounter > 17) {
-      $('#progress-bar ul li').css('display', 'none');
-      liCounter = 1;
+    progressBar.querySelectorAll('li')[liCounter].style.display = 'inline-block';
+    if (liCounter >= 15) {
+      progressBar.querySelectorAll('li').forEach(element => {
+        element.style.display = 'none';
+      })
+      liCounter = 0;
     }else{
       liCounter++;
     }
