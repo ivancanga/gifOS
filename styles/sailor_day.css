@@ -6,15 +6,26 @@ body {
   background-image: linear-gradient(to right, #4180f6, #f7c9f3);
 }
 
-.btn-header {
+.btn-header,
+.create-gif {
   background: #f7c9f3;
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
 
+.create-gif a,
+.url-header {
+  color: black;
+}
+
+.url-header:hover {
+  border: 1px dotted black;
+}
+
 .btn-header:hover,
 .choose-style:hover button,
-.search-input:focus ~ .btn-search:hover {
+.search-input:focus ~ .btn-search:hover,
+.create-gif:hover {
   background: #e6bce2;
 }
 

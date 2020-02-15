@@ -7,15 +7,21 @@ body {
   box-shadow: 0 1px 0 0 #110038;
 }
 
-.btn-header {
+.btn-header,
+.create-gif {
   color: white;
   background: #ee3efe;
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 }
 
+.create-gif a {
+  color: white;
+}
+
 .btn-header:hover,
-.choose-style:hover button {
+.choose-style:hover button,
+.create-gif:hover {
   background: #cf37db;
 }
 
@@ -23,8 +29,12 @@ body {
   background: #2e32fb;
 }
 
-.url-header a {
+.url-header {
   color: #ffffff;
+}
+
+.url-header:hover {
+  border: 1px dotted white;
 }
 
 .search-bar {
@@ -33,10 +43,6 @@ body {
 
 .title-search-bar {
   background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
-}
-
-.url-header a:hover {
-  border: 1px dotted white;
 }
 
 .dashed {
@@ -75,7 +81,7 @@ body {
   box-shadow: inset -2px -2px 0 0 #2124b3, inset 2px 2px 0 0 #ffffff;
 }
 
-.autocomplete-content{
+.autocomplete-content {
   background: #b4b4b4;
   box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 }

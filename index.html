@@ -24,14 +24,14 @@
             <nav class="nav-bar">
                 <a href="index.html"><img id="img-header" src="/gifOS/images/gifOF_logo.png" alt=""></a>
                 <div class="btns-header">
-                    <div class="create-gif"><a href="upload.html"><button class="btn-header"><span>Crear
-                                    Guifos</span></button></a></div>
+                    <div class="create-gif"><a href="upload.html" class="btn-create-gif"><span>Crear
+                                Guifos</span></a></div>
                     <div class="choose-style">
                         <ul>
                             <li id="elegir-tema" onmouseover="ver()" onmouseout="ocultar()">
                                 <button class="btn-header"><span>Elegir tema</span></button>
-                                <button class="btn-header dropdown"><span><img
-                                            src="/gifOS/images/dropdown.svg"></span></button>
+                                <button class="btn-header dropdown"><span><img src="/gifOS/images/dropdown.svg"
+                                            alt="dropdown"></span></button>
                                 <div id="style-list">
                                     <p onclick="active_sailor_day()" class="sailor-day"><span
                                             class="dashed">S</span>ailor
@@ -42,8 +42,9 @@
                             </li>
                         </ul>
                     </div>
-                    <span class="url-header"><a href="my-gifos.html"><span class="dashed">M</span>is Guifos<span
-                                id="gif-count"><span></span></a>
+                    <a class="url-header" href="my-gifos.html">
+                        <span class="dashed">M</span>is Guifos<span id="gif-count"></span>
+                    </a>
                 </div>
             </nav>
 
@@ -55,8 +56,8 @@
                     <input class="search-input" autocomplete="off" id="search"
                         placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" oninput="resultadoSugerido()">
                     <button type="submit" class="btn-search" onclick="getSearchResults()">
-                        <span class="btn-search-content"><img id="lupa"
-                                src="/gifOS/images/lupa_inactive.svg" /></span></button>
+                        <span class="btn-search-content"><img id="lupa" src="/gifOS/images/lupa_inactive.svg"
+                                alt="lupa" /></span></button>
                 </div>
                 <div class="autocomplete-content">
                 </div>

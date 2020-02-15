@@ -62,11 +62,30 @@ input {
   cursor: pointer;
 }
 
-.create-gif {
-  margin-right: 10px;
+.btn-create-gif{
+
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1rem;
+  padding: 4px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.create-gif:hover button span {
+.create-gif {
+  text-align: center;
+  margin-right: 10px;
+  width: 144px;
+  height: 36px;
+  padding: 5px;
+}
+
+.create-gif a{
+  line-height: 14px;
+  display: block;
+  border: 1px solid transparent;
+}
+
+.create-gif a:hover {
   display: block;
   border: 1px dotted black;
 }
@@ -133,19 +152,15 @@ input {
   background: #2e32fb;
 }
 
-.url-header {
-  margin: 7px 0 0 10px;
-  vertical-align: middle;
-}
-
-.url-header a {
-  padding: 5px 15px 5px 0;
+.url-header{
+  margin: 2px 0 0 10px;
+  padding: 5px 20px 5px 0;
   text-decoration: none;
   color: #110038;
   border: 1px solid transparent;
 }
 
-.url-header a:hover {
+.url-header:hover {
   border: 1px dotted black;
 }
 
@@ -433,6 +448,14 @@ input {
   .create-gif {
     margin: 20px 0 0 0;
     padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .create-gif a{
+    display: block;
   }
 
   .dropdown {
