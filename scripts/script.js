@@ -1,7 +1,5 @@
-let sailor_day = "/gifOS/styles/sailor_day.css";
-let sailor_night = "/gifOS/styles/sailor_night.css";
-
-// REFACTORIZAR TODO ESTO
+let sailor_day = "./styles/sailor_day.css";
+let sailor_night = "./styles/sailor_night.css";
 
 function ver() {
   document.getElementById("style-list").style.display = "block";
@@ -14,20 +12,20 @@ function ocultar() {
 function active_sailor_night() {
   document.getElementById("theme").href = sailor_night;
   document.getElementById("img-header").src =
-    "/gifOS/images/gifOF_logo_dark.png";
-  document.getElementById("lupa").src = "/gifOS/images/lupa.svg";
+    "./images/gifOF_logo_dark.png";
+  document.getElementById("lupa").src = "./images/lupa.svg";
   setThemeLS();
 }
 
 function active_sailor_day() {
   document.getElementById("theme").href = sailor_day;
-  document.getElementById("img-header").src = "/gifOS/images/gifOF_logo.png";
-  document.getElementById("lupa").src = "/gifOS/images/lupa_inactive.svg";
+  document.getElementById("img-header").src = "./images/gifOF_logo.png";
+  document.getElementById("lupa").src = "./images/lupa_inactive.svg";
   setThemeLS();
 }
 
 function changeLupa() {
-  document.getElementById("lupa").src = "/gifOS/images/lupa.svg";
+  document.getElementById("lupa").src = "./images/lupa.svg";
 }
 
 function showLsItems() {
@@ -61,9 +59,9 @@ window.onload = function() {
 
   // Si alguna vez se predefinió el tema oscuro, permanece el tema por el value en LS
   if (localStorage.getItem("theme") == 2) {
-    document.getElementById("theme").href = "/gifOS/styles/sailor_night.css";
+    document.getElementById("theme").href = "./styles/sailor_night.css";
     document.getElementById("img-header").src =
-      "/gifOS/images/gifOF_logo_dark.png";
+      "./images/gifOF_logo_dark.png";
   }
 
   trendingGifs();

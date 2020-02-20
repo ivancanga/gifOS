@@ -68,7 +68,7 @@ function stopRecording() {
 function uploadGif(gif) {
   document.querySelector('.gif-preview-container').innerHTML = `
   <div class='uploading-gif'>
-    <img src="/gifOS/images/globe_img.png">
+    <img src="./images/globe_img.png">
     <p class='uploading-gif-title'>Estamos subiendo tu guifo...<p>
     <div class="progress-bar" id="progress-bar">
       <ul>
@@ -129,7 +129,7 @@ function uploadGif(gif) {
           let alertGif = document.createElement('div');
           alertGif.className = 'alert-gif';
           alertGif.innerHTML = `
-          <p class='title-modal'> Guifo subido con éxito! <span style='float: right'><img id='closeModal' src="/gifOS/images/close.svg"></span></p>
+          <p class='title-modal'> Guifo subido con éxito! <span style='float: right'><img id='closeModal' src="./images/close.svg"></span></p>
           <div class='content-modal'>
             <img class='gif-modal' src='${data.data.images.original.url}'>
             <div class='gif-modal-btns'>
@@ -143,7 +143,7 @@ function uploadGif(gif) {
           document.body.append(alertGif);
           document.getElementById('closeModal').addEventListener('click', () => {
             document.querySelector('.alert-gif').style.display = 'none';
-            window.location.href = "../gifOS/my-gifos.html";
+            window.location.href = "./my-gifos.html";
           });
         });
     });

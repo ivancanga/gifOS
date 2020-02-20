@@ -8,10 +8,10 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>Mis Gifos - gifOS</title>
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="/gifOS/styles/style.css">
-    <link type="text/css" rel="stylesheet" href="/gifOS/styles/upload.css">
-    <link rel="stylesheet" href="/gifOS/styles/sailor_day.css" id="theme">
-    <link rel="stylesheet" href="/gifOS/styles/inner_gifs.css">
+    <link type="text/css" rel="stylesheet" href="./styles/style.css">
+    <link type="text/css" rel="stylesheet" href="./styles/upload.css">
+    <link rel="stylesheet" href="./styles/sailor_day.css" id="theme">
+    <link rel="stylesheet" href="./styles/inner_gifs.css">
 </head>
 
 <body>
@@ -22,8 +22,8 @@
     <div class="content">
         <header>
             <div class="nav-bar">
-                <a href="index.html"><img class="back-arrow" src="/gifOS/images/arrow.svg" alt=""><img id="img-header"
-                        src="/gifOS/images/gifOF_logo.png" alt=""></a>
+                <a href="index.html"><img class="back-arrow" src="./images/arrow.svg" alt=""><img id="img-header"
+                        src="./images/gifOF_logo.png" alt=""></a>
             </div>
         </header>
 
@@ -37,12 +37,12 @@
             <div id="savedgifos"></div>
         </div>
     </div>
-    <script src="/gifOS/scripts/displayLS-gifs.js"></script>
-    <script src="/gifOS/scripts/social-media.js"></script>
+    <script src="./scripts/displayLS-gifs.js"></script>
+    <script src="./scripts/social-media.js"></script>
     <script>
         if (localStorage.getItem('theme') == 2) {
-            document.getElementById("theme").href = '/gifOS/styles/sailor_night.css';
-            document.getElementById("img-header").src = "/gifOS/images/gifOF_logo_dark.png";
+            document.getElementById("theme").href = './styles/sailor_night.css';
+            document.getElementById("img-header").src = "./images/gifOF_logo_dark.png";
         }
         window.onload = function() {
             displayModal();

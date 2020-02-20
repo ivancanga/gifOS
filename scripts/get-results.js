@@ -1,4 +1,4 @@
-const APIurl = "//api.giphy.com/v1/gifs/";
+const APIurl = "https://api.giphy.com/v1/gifs/";
 const APIkey = "xBWsI1LWcGLChS6L9d5ucODsG0BfkNEx";
 
 // Resultados de busqueda
@@ -40,7 +40,7 @@ function getSearchResults() {
         saveBtnChild = document.createElement("p");
         saveBtnChild.className = "save-gif";
         saveBtnChild.id = gifID;
-        saveBtnChild.innerHTML = `<img title='Guardar Gifos' src='/gifOS/images/save-icon.png'>`;
+        saveBtnChild.innerHTML = `<img title='Guardar Gifos' src='./images/save-icon.png'>`;
         saveBtnChild.onclick = function(e) {
           fetch(`${APIurl}${this.id}?&api_key=${APIkey}`)
             .then(response => {
@@ -127,7 +127,7 @@ function suggestedGifs(gif) {
       gif_box.className = "gif-box";
       gif_box.innerHTML = `
         <div class='gif-title'>
-          <span>#${gif}</span><span style='float: right;'><img src='/gifOS/images/button3.svg' /></span>
+          <span>#${gif}</span><span style='float: right;'><img src='./images/button3.svg' /></span>
         </div>
         <div class='gif-img'>
           <img src='${data.data[0].images.original.url}'>

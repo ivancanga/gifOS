@@ -15,7 +15,7 @@ function createModal(src) {
   modalDiv.className = "modal-div";
   modalDiv.innerHTML = `
     <div class='gif-title'>
-          <span>Compartir gif!</span><span style='float: right;'><img id='close' src='/gifOS/images/button3.svg' /></span>
+          <span>Compartir gif!</span><span style='float: right;'><img id='close' src='./images/button3.svg' /></span>
     </div>
     <img class='modal-gif-img' src='${src}'/>
 
@@ -23,25 +23,25 @@ function createModal(src) {
       <div class='social-media'>
         <p>
           <a target='_blank' href='https://wa.me/?text=${src}'>
-            <img src='/gifOS/images/whatsapp.svg'>Enviar como mensaje
+            <img src='./images/whatsapp.svg'>Enviar como mensaje
           </a>
         </p>
 
         <p>
           <a target='_blank' href='http://www.facebook.com/sharer/sharer.php?u=${src}'>
-            <img src='/gifOS/images/facebook.svg'>Compartir en Facebook
+            <img src='./images/facebook.svg'>Compartir en Facebook
           </a>
         </p>
         <p>
           <a target='_blank' href='http://twitter.com/share?url=${src}'>
-            <img src='/gifOS/images/twitter.svg'>Twittear gif
+            <img src='./images/twitter.svg'>Twittear gif
           </a>
         </p>
       </div>
 
       <div class='download-btn'>
         <p>
-        <img src='/gifOS/images/download-icon.svg'>
+        <img src='./images/download-icon.svg'>
         Descargar
         </p>
         <p id='copyEmbed'></p>
